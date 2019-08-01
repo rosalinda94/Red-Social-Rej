@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use \app\PersonController;
-
-
-class PersonController extends Controller
+class GroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        
-        
+        //
     }
 
     /**

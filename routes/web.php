@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome'); 
 });
 
-Route::get('/person', 'PersonController@index');
+Route::get('/person', 'PersonController@show');
+
+Route::get('/group', 'GroupController@show');
