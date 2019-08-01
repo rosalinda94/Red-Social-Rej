@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Reaction_type extends Model
+
+class ReactionType extends Model
 {
     protected $table = 'reactions_types'
     public $fillable = [
@@ -14,5 +15,5 @@ class Reaction_type extends Model
     public function reactions(){
       return $this->hasMany(Reaction::class);
     }
-    
+
 }

@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use app\Reaction_type;
-
-class ReactionTypeController extends Controller
+class ReactionController extends Controller
 {
     /**
      * Display a listing of the resource.
