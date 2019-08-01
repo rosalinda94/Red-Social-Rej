@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome'); 
+    return view('welcome');
 });
 
-Route::get('/person', 'PersonController@show');
+Route::get('/reaction_type', 'ReactionTypeController@reactionType');
+Route::get('/person', 'PersonController@index');
 
-Route::get('/group', 'GroupController@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

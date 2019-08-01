@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PersonController extends Controller
+use app\Reaction_type;
+
+class ReactionTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-       return view('nosotros');
+        //
     }
 
     /**
