@@ -6,13 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-    protected $table='persons';
+    protected $table='person';
 
     protected $fillable = [
-        'name','last_name', 'sex', 'avatar', 'email',
+        'name','last_name','partner', //'sex', 'avatar', 'email',
     ];
 
-    public function user(){
+   /* public function user(){
     	return $this->belongsTo(user::class);
-    }
+    }*/
+
+    
 }

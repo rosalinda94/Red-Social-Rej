@@ -14,12 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//-----------------------------------------//
+//Route::get('/persons', 'PersonController@index'); 
 
+//Route::resource('/persons','PersonController');
+//-----------------------------------------//
 Route::get('/home/nosotros', function () {
     return view('home.nosotros');
 });
 
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');
+
 Route::get('/person', 'PersonController@index');
 
 Auth::routes();

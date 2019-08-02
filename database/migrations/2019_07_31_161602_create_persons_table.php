@@ -17,6 +17,7 @@ class CreatePersonsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('lastName');
+            $table->string('partner');
             $table->char('sex');
             $table->string('avatar');
             $table->string('email');
