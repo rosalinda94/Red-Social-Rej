@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home/nosotros', function () {
+    return view('home.nosotros');
+});
+
+Route::get('/reaction_type', 'ReactionTypeController@reactionType');
+Route::get('/person', 'PersonController@index');
+
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/comentarios', 'CommentController@comment');
 
 Route::get('/posteos','PostController@post');
