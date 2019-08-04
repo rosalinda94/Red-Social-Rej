@@ -6,6 +6,7 @@ use App\Model;
 use Faker\Generator as Faker;
 
 $factory->define(\App\Person::class, function (Faker $faker) {
+
     return [
         'name' => $faker->name,
         'lastName' => $faker->lastName,
@@ -13,6 +14,7 @@ $factory->define(\App\Person::class, function (Faker $faker) {
         'sex'=>$faker->title,
         'avatar'=>$faker->imageUrl,
         'email' => $faker->unique()->safeEmail,
+        'user'=>$faker->$user,
        
     ];
 });

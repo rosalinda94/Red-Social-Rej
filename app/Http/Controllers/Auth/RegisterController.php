@@ -64,31 +64,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
-        /*{
-       $user=User::create([
-         'name'=>$data['name'],
-         'email'=>$data['email'],
-         'password'=>$data['password'],
-       ]);
-       $user->person()->create([
-         'name'=>$data['name'],
-         'lastName'=>$data['lastName'],
-         'partner'=>$data['partner'],
-         'sex'=>$data['sex'],
-         'email'=>$data['email'],
-         'password'=>$data['password'],
-         'avatar'=>$data['avatar'],
-       ]);
-         return $user;*/
-        $image = $data['avatar'];
-         $image->move('uploads', $image);
+        // Guardo la imagen
+      $ruta= request()->file('avatar')->store('public');
+       $nombreArchivo= basename($ruta);
 
+           
+        // Guardo en user
          $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
        ]);
 
+         // Guardo en persons
          $user->person()->create([
          'name'=>$data['name'],
          'lastName'=>$data['lastName'],
@@ -96,7 +84,7 @@ class RegisterController extends Controller
          'sex'=>$data['sex'],
          'email'=>$data['email'],
          'password'=>$data['password'],
-         'avatar'=>'image',
+         'avatar' => $nombreArchivo,
        ]);
       
          

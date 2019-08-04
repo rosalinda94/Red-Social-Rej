@@ -27,6 +27,8 @@ Route::get('/reaction_type', 'ReactionTypeController@reactionType');
 
 Route::get('/person', 'PersonController@index');
 
+Route::get('/group', 'GroupController@show');
+
 Auth::routes();
 
 
