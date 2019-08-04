@@ -10,8 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function user (){
-        return $this->belongsTo(user::class);
+    public function person (){
+          return $this->hasOne(Person::class);
     }
 
     /**

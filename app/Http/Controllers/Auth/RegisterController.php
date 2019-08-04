@@ -64,28 +64,43 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
+        /*{
+       $user=User::create([
+         'name'=>$data['name'],
+         'email'=>$data['email'],
+         'password'=>$data['password'],
+       ]);
+       $user->person()->create([
+         'name'=>$data['name'],
+         'lastName'=>$data['lastName'],
+         'partner'=>$data['partner'],
+         'sex'=>$data['sex'],
+         'email'=>$data['email'],
+         'password'=>$data['password'],
+         'avatar'=>$data['avatar'],
+       ]);
+         return $user;*/
         $image = $data['avatar'];
          $image->move('uploads', $image);
 
-        
-         //$nombre_tabla->imagen = image->getClientOriginalName();
-       
-        Person::create([
-            'name' => $data['name'],
-            'lastName' => $data['lastName'],
-            'partner' => $data['partner'],
-           'sex' => $data['sex'],
-           'avatar' => $data['avatar'],
-            'email' => $data['email'],
-           ' $avatar'=>'image',
-        ]);
-
-        
-         return  User::create([
+         $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+       ]);
+
+         $user->person()->create([
+         'name'=>$data['name'],
+         'lastName'=>$data['lastName'],
+         'partner'=>$data['partner'],
+         'sex'=>$data['sex'],
+         'email'=>$data['email'],
+         'password'=>$data['password'],
+         'avatar'=>'image',
+       ]);
+      
+         
+         return $user;
 
     }
 }
