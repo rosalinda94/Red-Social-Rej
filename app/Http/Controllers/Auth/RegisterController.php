@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Person;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -52,7 +53,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'avatar'=> ['mimetypes: image/png, image/jpeg, image/jpg', 'max:5000']
         ]);
     }
 
@@ -63,12 +63,23 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        return User::create([
+    {   
+       
+        Person::create([
+            'name' => $data['name'],
+            'lastName' => $data['lastName'],
+            'partner' => $data['partner'],
+            'sex' => $data['sex'],
+            'avatar' => $data['avatar'],
+            'email' => $data['email'],
+        ]);
+
+        
+         return  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar'=> request()->file('avatar')->store('public/avatar'),
         ]);
+
     }
 }

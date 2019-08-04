@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
 
-class PersonController extends Controller
-{  
-
+class PostController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
@@ -15,16 +15,8 @@ class PersonController extends Controller
      */
     public function index()
     {
-       return view('nosotros');
-
-    {//-----------------------------------------//
-      /*  $persons=\App\Person::all();
-
-        return view('person.index', [
-            'persons' => $persons
-        ]);*/
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -33,7 +25,7 @@ class PersonController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -43,13 +35,8 @@ class PersonController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {//-----------------------------------------//
-       /*$person = new Person;
-        $person->name = $request->name;
-        $person->lastName = $request->lastName;
-        $person->save();
-    return redirect('person');*/
-
+    {
+        //
     }
 
     /**
@@ -58,12 +45,9 @@ class PersonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Person $person)
+    public function show($id)
     {
-        // Los agrego Rosi
-       /* return $view('Person.show', [
-            'person' => $persons,
-        ]);*/
+        //
     }
 
     /**

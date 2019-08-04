@@ -17,11 +17,13 @@ class CreatePersonsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('lastName');
+            $table->string('partner');
             $table->char('sex');
             $table->string('avatar');
             $table->string('email');
             $table->timestamps();
             $table->bigInteger('user_id')->unsigned();
+            $table->boolean('role')->nullable()->defaul(false);
 
             $table->foreign('user_id')->references('id')->on('users');
         });

@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Route
+| Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -14,15 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//-----------------------------------------//
+//Route::get('/persons', 'PersonController@index'); 
 
+//Route::resource('/persons','PersonController');
+//-----------------------------------------//
 Route::get('/home/nosotros', function () {
     return view('home.nosotros');
 });
 
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');
+
 Route::get('/person', 'PersonController@index');
 
 Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/comentarios', 'CommentController@comment');
+
+Route::get('/posteos','PostController@post');
