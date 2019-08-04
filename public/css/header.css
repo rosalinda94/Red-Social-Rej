@@ -1,0 +1,129 @@
+/* ------------------------- Inicio Header & Footer ------------------------- */
+
+#header{
+  position: fixed;
+  width: 100%;
+}
+
+.footer{
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+  padding: 1% 1% 1% 1%;
+}
+
+.derechos{
+  margin-top: 1%;
+}
+
+
+.rmobile {
+  display: none;
+}
+
+.links,
+.redes{
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+#logo{
+  width: 20%;
+}
+
+.logo,
+.empresa{
+  justify-content: flex-start;
+}
+
+.redes a {
+  margin-right:  20%;
+  margin-top: 10%;
+}
+
+.redes a i{
+  color: white;
+}
+
+.redes a i:hover{
+  color: #bf8fd8;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+}
+
+ nav ul li {
+  font-family: 'oswald', sans-serif;
+  font-size: 16px;
+  list-style:none;
+  text-transform: uppercase;
+}
+
+.logo li a{
+  padding: 0;
+}
+.logo li a img{
+  width: 50px;
+  margin: 10px;
+}
+
+nav ul li a {
+  padding: 20px 10px;
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #bf8fd8;
+}
+
+footer{
+  height: 20px;
+}
+
+/* -------------------------  FIN Header & Footer ------------------------- */
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+
+  /* -------------------------  Header & Footer ------------------------- */
+
+  .links{
+    display: none;
+  }
+
+  .rmobile li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+  }
+
+  .rmobile li:hover ul{
+    display: block;
+  }
+  .rmobile li ul li {
+    position: relative;
+  }
+  .rmobile {
+    display: block;
+    float: right;
+  }
+  .hamburgesa {
+    padding: 5px 80px;
+  }
+  .hamburgesa ul li {
+    width: 90%;
+    text-align: center;
+    margin-top: 1%;
+  }
+
+  .rmobile ul li a {
+    display: block;
+    color: #fff;
+    background-color: #00aaa9;
+  }

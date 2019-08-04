@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 //-----------------------------------------//
-//Route::get('/persons', 'PersonController@index'); 
+//Route::get('/persons', 'PersonController@index');
 
 //Route::resource('/persons','PersonController');
 //-----------------------------------------//
-Route::get('/home/nosotros', function () {
-    return view('home.nosotros');
+Route::get('/person/welcome', function () {
+    return view('welcome');
 });
 
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');
