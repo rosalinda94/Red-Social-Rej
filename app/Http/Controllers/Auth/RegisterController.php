@@ -64,14 +64,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
+        $image = $data['avatar'];
+         $image->move('uploads', $image);
+
+        
+         //$nombre_tabla->imagen = image->getClientOriginalName();
        
         Person::create([
             'name' => $data['name'],
             'lastName' => $data['lastName'],
             'partner' => $data['partner'],
-            'sex' => $data['sex'],
-            'avatar' => $data['avatar'],
+           'sex' => $data['sex'],
+           'avatar' => $data['avatar'],
             'email' => $data['email'],
+           ' $avatar'=>'image',
         ]);
 
         
