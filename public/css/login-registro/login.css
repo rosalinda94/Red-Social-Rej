@@ -1,0 +1,89 @@
+
+.py-4 {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+
+.container {
+display: flex;
+justify-content: center;
+background-image: url(/img/fondo-secundario.jpg);
+background-size: cover;
+text-align: center;
+width: 100%;
+}
+
+#login {
+margin: 0 auto;
+padding-top: 5%;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 95vh;
+align-items: center
+}
+
+.card{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0);
+
+}
+
+.card-header {
+  font-family: 'oswald', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  background-color:rgba(0, 0, 0, 0.8);
+  border: 0;
+  border-radius: 0rem;
+  color: white;
+}
+
+.card-header p{
+  font-family: 'roboto', sans-serif;
+  font-weight: lighter;
+  font-size: 12px;
+
+}
+
+.card-body{
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+}
+
+/* cambiar color campo a completar */
+
+#email,
+#password{
+  background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #878786;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* boton de enviar */
+.col-md-8 .offset-md-4 {
+  margin: 0 auto;
+}
+
+.btn-primary{
+text-decoration: none;
+font-family: 'roboto', sans-serif;
+font-size: 20px;
+width:100%;
+color: #fff;
+border: none;
+background-color: #b58ec0;
+}
+
+.btn-link,
+.registroDesdeLogin{
+  color:#b58ec0;
+}

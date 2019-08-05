@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('css/login-registro/register.css') }}" rel="stylesheet">
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div id="register" class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Te damos la bienvenida a MiClub') }} <br>
+                  <p class="condiciones">Tu equipo más cerca que nunca</p>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}" >
@@ -56,8 +59,8 @@
 
                             <div class="col-md-6">
                               <select id="sex" name="sex"  class="form-control">
-                              <option disabled selected>Selecciona tu sexo</option> 
-                              <option id="sex"  name="sex" value="F">Femenino</option> 
+                              <option disabled selected>Selecciona tu sexo</option>
+                              <option id="sex"  name="sex" value="F">Femenino</option>
                               <option id="sex" name="sex" value="M">Masculino</option>
                               </select>
 
@@ -68,8 +71,6 @@
                                 @enderror
                             </div>
                         </div>
-                         
-
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Electrónico') }}</label>
@@ -123,14 +124,21 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Registrarse') }}
                                 </button>
+                                <br>
+                                <article class="condiciones">
+                                  <article class="condiciones">
+                                    <p> <br>Al continuar aceptas las <b>Condiciones del servicio </b> y la <b>Política de la privacidad </b> de MiClub </p>
+
+                                    <p><b>¿Ya eres miembro de MiClub? <a class="loginDesdeRegistro" href={{ url('/login') }}>Registrate</a></b></p>
+                                  </article>
+                                </article>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 @endsection

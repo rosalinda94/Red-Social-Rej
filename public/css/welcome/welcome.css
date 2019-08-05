@@ -167,6 +167,8 @@ height: 500px;
 .comentario{
   border: none;
   border-bottom: 1px solid #878786;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .primary {
@@ -188,6 +190,8 @@ height: 500px;
   color: #878786;
   border: none;
   border-bottom: 1px solid #878786;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /* ------------------------- Fin Home Nosotros & Contactanos ---------------- */
@@ -279,7 +283,6 @@ padding: 8%;
 
 .contacto .derecha{
   width: 100%;
-
   margin: 0;
   padding:5%;
 }
