@@ -12,7 +12,7 @@
     <section class="principal">
        <article class="publicar">
         <div class="que-pensas">
-          <a class="profile-picture" href="profile.php"><img src="img/foto-perfil.jpg" alt=""></a>
+          <a class="profile-picture" href="profile.php"><img src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="50px"></a>
           <textarea name="name" rows="1" cols="70" class="comentario" placeholder="Que quieres escribir hoy?   {{Auth::user()->name }}"></textarea>
         </div>
         <div class="que-publicar">
@@ -20,21 +20,17 @@
             <input type="file" class="custom-file-input" id="customFile">
             <label class="custom-file-label" for="customFile">Choose file</label>
           </div>
-          <input id="file-upload" type="file"/>
-          <button style="width:120px;">Etiquetar</button>
-          <input type="text" name="" value="">
-          <select class="sentimiento-select" name="Sentimiento" style="width:120px;">
-            <option disabled selected>Sentimiento</option>
-            <option value="fel">Feliz</option>
-            <option value="tr">Triste</option>
-            <option value="ag">Agradecido</option>
-            <option value="en">Enamorado</option>
-            <option value="loc">Loco</option>
-            <option value="gen">Genial</option>
-            <option value="rel">Relajado</option>
-            <option value="eno">Enojado</option>
+          
+          <select class="btn btn-outline-secondary">
+            <option disabled selected>Etiquetar a </option>
+            @forelse($users as $user)
+            <option value="fel"> {{$user->name }}</option>
+                @empty
+          <option>no hay socios</option>
+          @endforelse
+            
           </select>
-          <button type="submit" name="ok"><i class="fas fa-check"></i></button>
+          <button type="submit" class="btn btn-outline-secondary">Publicar</button>
         </div>
       </article>
 

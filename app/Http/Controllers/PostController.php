@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -17,9 +18,10 @@ class PostController extends Controller
     public function index()
     {
         $posts= post::all();
+        $users= user::all();
 
 
-        return view('/home/post.index', compact('posts'));
+        return view('/home/post.index', compact('posts', 'users'));
     }
 
     /**
