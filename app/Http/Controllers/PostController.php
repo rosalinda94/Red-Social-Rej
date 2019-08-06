@@ -46,6 +46,7 @@ class PostController extends Controller
         Post::create([
             'title'=> $data['title'],
             'body'=> $data['body'],
+            'image' => $data['image'],
         ]);
         return redirect()->route('post.index');
     }

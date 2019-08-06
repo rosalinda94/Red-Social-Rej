@@ -34,5 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/post/{id}', 'PostsController@show')->name('posts.show');
 
+Route::resource('terceros' , 'TerceroController');
+
 Auth::routes();
 

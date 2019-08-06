@@ -19,6 +19,4 @@ class Person extends Model
     {
       return $this->hasMany(Post::class);
     }
-
-    
 }
