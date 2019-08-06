@@ -26,7 +26,7 @@ class PostController extends Controller
         $users= user::all();
 
 
-        return view('/home/post.index', compact('posts', 'users'));
+        return view('/home.index', compact('posts', 'users'));
     }
 
     /**
@@ -54,7 +54,7 @@ class PostController extends Controller
         'image' => $nombreArchivo,
         'user_id' => Auth::id(),
       ]);
-    return view('/home.home');
+        return view('/home.index');
 
     }
 
@@ -66,7 +66,7 @@ class PostController extends Controller
      */
     public function store()
     {
-      
+
     }
 
     /**

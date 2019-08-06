@@ -39,7 +39,7 @@
             @forelse($users as $user)
             <option value="fel"> {{$user->name }}</option>
                 @empty
-          <option>no hay amigos</option>
+          <option>no hay socios</option>
           @endforelse
 
           </select>
@@ -57,15 +57,11 @@
 			<article class="publicacion">
 			    <div class="">
 			        <img src="storage\{{ $post->image  }}"  alt="" width="50px">
-
 			        <b>{{$post->user->name }}</b>
-			        <p>{{$post->created_at }}</p>
+			        <p>{{$post->create_at }}</p>
 			        </div>
 			        <div class="publicacion-user">
-                <p>{{$post->body }}</p>
-                  <br>
 			        <p>{{$post->body }}</p>
-
               <i class="far fa-thumbs-up"> Me gusta</i>
               <i class="far fa-thumbs-down"> No me gusta</i>
               <i class="fas fa-share"> Compartir</i>
