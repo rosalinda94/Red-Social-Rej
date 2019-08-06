@@ -1,7 +1,9 @@
 <ul>
-	@foreach ($persons as $person)
+	@forelse ($persons as $person)
 	<li>
 		<a href="">{{ $person->name}}</a>
 	</li>
-	@endforeach
+				@empty
+			<li>no hay posts</li>
+			@endforelse
 </ul>

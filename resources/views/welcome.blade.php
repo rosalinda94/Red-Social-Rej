@@ -20,11 +20,6 @@
       <section class="nosotros">
         <h2>¿Quiénes somos?</h2>
         <p>
-          <?php
-          if(isset($_SESSION['nombre'])){
-            echo $_SESSION['nombre'];
-          }
-           ?>
           Somos una Red Social que ayuda a los clubes a comunicarse con sus socios y que los mismos estén atentos y conectados a todas las noticias nuevas de la institución. El socio contará con las distintas opciones de contacto, eligiendo sus actividades favoritas y siguiéndolas minuto a minuto.
         </p>
         <p>

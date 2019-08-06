@@ -11,11 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	$this->call(PersonSeeder::class);
+    /*	$this->call(PersonSeeder::class);
         $this->call(UsersSeeder::class);
-        $this->call(GroupSeeder::class);
-
-
+        $this->call(GroupSeeder::class);*/
+        /*--Con esto creo 10 usuarios y 3 posteos--*/
+        factory(\App\User::class, 10)->create()->each(function ($user) {
+            $user->posts()->saveMany(factory(\App\Post::class, 3)->make());
+          });
         // $this->call(UsersTableSeeder::class);
     }
 }

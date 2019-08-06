@@ -62,7 +62,7 @@
                                 <article class="condiciones">
                                   <p> <br>Al continuar aceptas las <b>Condiciones del servicio </b> y la <b>Política de la privacidad </b> de MiClub </p>
                                   @if (Route::has('password.request'))
-                                      <a class="btn btn-link" href="{{ route('password.request') }}">
+                                      <a class="registroDesdeLogin" href="{{ route('password.request') }}">
                                           {{ __('¿Olvido su contraseña?') }}
                                       </a>
                                   @endif

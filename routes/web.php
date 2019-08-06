@@ -14,25 +14,27 @@
 Route::get('/', function () {
     return view('welcome');
 });
-//-----------------------------------------//
-//Route::get('/persons', 'PersonController@index');
 
-//Route::resource('/persons','PersonController');
-//-----------------------------------------//
 Route::get('/person/welcome', function () {
     return view('welcome');
 });
+/**------------------------*/
 
+/**------------------------*/
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');
 
 Route::get('/person', 'PersonController@index');
 
-Route::get('/group', 'GroupController@show');
+Route::get('/group', 'GroupController@index');
+
+Route::get('/post', 'PostController@index');
+Route::get('/post/create', 'PostController@create');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/post/{id}', 'PostsController@show')->name('posts.show');
+
+Route::resource('terceros' , 'TerceroController');
 
 Auth::routes();
 
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/comentarios', 'CommentController@comment');
-
-Route::get('/posteos','PostController@post');

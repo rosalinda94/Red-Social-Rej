@@ -9,7 +9,7 @@
     <section class="aside">
       <article class="profile-aside">
          <a href="profile.php">
-          <img src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="100px">
+          <img src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="50px">
         </a>
 
         <!-- poner el nombre del usuario -->
@@ -17,7 +17,8 @@
       </article>
 
       <article class="Listado-completo">
-        @yield('nosotros')
+        <h1>home</h1>
+         <!-- Incluyo la seccion de los grupos@include('/home.group')  -->
       </article>
     </section>
 
@@ -25,74 +26,19 @@
 
     <section class="principal">
       <article class="publicar">
-        <div class="que-pensas">
-          <a class="profile-picture" href="profile.php"><img src="img/foto-perfil.jpg" alt=""></a>
-          <textarea name="name" rows="1" cols="70" class="comentario" placeholder="¿Qué estas pensando...?"></textarea>
-        </div>
-        <div class="que-publicar">
-          <label for="file-upload" class="custom-file-upload" style="width:120px;">
-            <i class="fa fa-cloud-upload"></i> Foto / video
-          </label>
-          <input id="file-upload" type="file"/>
-          <button style="width:120px;">Etiquetar</button>
-          <input type="text" name="" value="">
-          <select class="sentimiento-select" name="Sentimiento" style="width:120px;">
-            <option disabled selected>Sentimiento</option>
-            <option value="fel">Feliz</option>
-            <option value="tr">Triste</option>
-            <option value="ag">Agradecido</option>
-            <option value="en">Enamorado</option>
-            <option value="loc">Loco</option>
-            <option value="gen">Genial</option>
-            <option value="rel">Relajado</option>
-            <option value="eno">Enojado</option>
-          </select>
-          <button type="submit" name="ok"><i class="fas fa-check"></i></button>
-        </div>
-      </article>
+        <dir class="que-pensas">
+           <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}" >
+             <a class="profile-picture" href="profile.php" ><img src="storage\{{ Auth::user()->person->avatar }}"  alt=""></a>
+             <textarea name="name" rows="1" cols="60" class="comentario" placeholder="¿Qué estas pensando...?"></textarea>
+
+           </form>        
+
+        </dir>
+
+        
       <article class="publicacion">
-        <div class="">
-          <a class="profile-picture" href="profile.php"><img src="img/foto-perfil.jpg" alt=""></a>
-          <!-- poner el nombre del usuario -->
-          <p>Maria Juana Perez</p>
-          <p>horario</p>
-        </div>
-        <div class="publicacion-user">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="publicacion-imagenes">
-          <img src="img/img1.png" alt="">
-          <img src="img/img1.png" alt="">
-          <img src="img/img1.png" alt="">
-          <img src="img/img1.png" alt="">
-        </div>
-        <div class="publicacion-reaccion">
-          <ul>
-            <li>personas que le gusta</li>
-            <li>x comentarios</li>
-          </ul>
-        </div>
-        <div class="publicacion-reaccionar">
-          <ul>
-            <li>Me gusta</li>
-            <li>Comentar</li>
-          </ul>
-        </div>
-        <div class="publicacion-comentarios">
-          <a class="profile-picture" href="profile.php"><img src="img/foto-perfil.jpg" alt=""></a>
-          <div class="">
-            <h5>nombre usuario</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-            <ul>
-              <li>Me gusta</li>
-              <li>Responder</li>
-              <li>fecha/hora</li>
-            </ul>
-          </div>
-        </div>
-        <textarea name="name" rows="2" cols="70" placeholder="Escribí aca tu comentario..."></textarea>
-        <button type="submit" name="ok">1</button>
-      </article>
+      <h2>aca van los post ir a post</h2>
+       </article>
     </section>
 
     <section class="aside2">
