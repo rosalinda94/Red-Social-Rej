@@ -63,12 +63,12 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {   
+    {
         // Guardo la imagen
       $ruta= request()->file('avatar')->store('public');
        $nombreArchivo= basename($ruta);
 
-           
+
         // Guardo en user
          $user=User::create([
             'name' => $data['name'],
@@ -86,8 +86,8 @@ class RegisterController extends Controller
          'password'=>$data['password'],
          'avatar' => $nombreArchivo,
        ]);
-      
-         
+
+
          return $user;
 
     }

@@ -11,16 +11,29 @@
 
     <section class="principal">
        <article class="publicar">
+         <form class="" action="post" method="post" enctype="multipart/form-data">
+           @csrf
+
         <div class="que-pensas">
           <a class="profile-picture" href="profile.php"><img src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="50px"></a>
-          <textarea name="name" rows="1" cols="70" class="comentario" placeholder="Que quieres escribir hoy?   {{Auth::user()->name }}"></textarea>
+          <textarea name="title" rows="1" cols="70" class="comentario" placeholder="Que quieres escribir hoy?   {{Auth::user()->name }}"></textarea>
+          <textarea name="body" rows="1" cols="70" class="comentario" placeholder="Que quieres escribir hoy?   {{Auth::user()->name }}"></textarea>
         </div>
         <div class="que-publicar">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose file</label>
+          <div class="form-group row">
+              <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Foto de perfil') }}</label>
+
+              <div class="col-md-6">
+                  <input style="color:transparent" id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
+
+                  @error('avatar')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+              </div>
           </div>
-          
+
           <select class="btn btn-outline-secondary">
             <option disabled selected>Etiquetar a </option>
             @forelse($users as $user)
@@ -28,13 +41,15 @@
                 @empty
           <option>no hay socios</option>
           @endforelse
-            
+
           </select>
           <button type="submit" class="btn btn-outline-secondary">Publicar</button>
         </div>
+      </form>
+
       </article>
 
-        
+
       <article class="publicacion">
       <ul>
       	<!-- pasar solo estooo -->
@@ -50,7 +65,7 @@
               <i class="far fa-thumbs-up"> Me gusta</i>
               <i class="far fa-thumbs-down"> No me gusta</i>
               <i class="fas fa-share"> Compartir</i>
-              <i><?= 
+              <i><?=
               $numero_aleatorio = rand(1,5) . ' veces compartidos'; ?></i>
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
@@ -70,7 +85,7 @@
        </article>
     </section>
 
-    
+
     </div>
   </body>
 
