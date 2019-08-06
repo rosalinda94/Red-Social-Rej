@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Mi Club') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -30,7 +30,7 @@
         <nav id="header"  class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                    {{-- {{ config('app.name', 'Mi Club') }} --}}
                     <img id='logo' src="{{asset('/img/logo-blanco.png')}}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -47,13 +47,8 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
 
-                        @guest
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url('/person/welcome') }}">{{ __('Nosotros') }}</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ route('login') }}">{{ __('Contactanos') }}</a>
-                          </li>
+                        @guest<li class="nav-item">
+   
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                             </li>
@@ -63,16 +58,21 @@
                                 </li>
                             @endif
                         @else
+                        
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                                </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar Sesion') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

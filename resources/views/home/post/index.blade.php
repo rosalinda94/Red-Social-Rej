@@ -37,7 +37,26 @@
 
         
       <article class="publicacion">
-      <h2>aca van los post ir a post</h2>
+      <ul>
+      	<!-- pasar solo estooo -->
+			@forelse($posts as $post)
+			<article class="publicacion">
+			    <div class="">
+			        <img src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="50px">
+			        <b>{{$post->user->name }}</b>
+			        <p>{{$post->create_at }}</p>
+			        </div>
+			        <div class="publicacion-user">
+			        <p>{{$post->body }}</p>
+			        </div>
+			      </article>
+			@empty
+			<li>no hay posts</li>
+			@endforelse
+		<!-- pasar solo estooo -->
+</ul>
+
+
        </article>
     </section>
 

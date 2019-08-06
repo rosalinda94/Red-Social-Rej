@@ -59,9 +59,9 @@
 
                             <div class="col-md-6">
                               <select id="sex" name="sex"  class="form-control">
-                              <option disabled selected>Selecciona tu sexo</option>
-                              <option id="sex"  name="sex" value="F">Femenino</option>
-                              <option id="sex" name="sex" value="M">Masculino</option>
+                              <option  style="background-color: black" disabled selected>Selecciona tu sexo</option>
+                              <option style="background-color: black" id="sex"  name="sex" value="F">Femenino</option>
+                              <option style="background-color: black" id="sex" name="sex" value="M">Masculino</option>
                               </select>
 
                                 @error('sex')
@@ -131,7 +131,7 @@
                                   <article class="condiciones">
                                     <p> <br>Al continuar aceptas las <b>Condiciones del servicio </b> y la <b>Política de la privacidad </b> de MiClub </p>
 
-                                    <p><b>¿Ya eres miembro de MiClub? <a class="loginDesdeRegistro" href={{ url('/login') }}>Registrate</a></b></p>
+                                    <p><b>¿Ya eres miembro de MiClub? <a class="loginDesdeRegistro" style="text-decoration: none" href={{ url('/login') }}>Inicia Sesión</a></b></p>
                                   </article>
                                 </article>
                             </div>

@@ -46,7 +46,7 @@ p{
 }
 /* ------------------------- Nosotros  ------------------------ */
 .nosotros {
-  background-color: black;
+  background-color: white;
   padding: 5% 25% 5% 25%;
   color: #fff;
   height: 100vh;
@@ -61,12 +61,14 @@ p{
   font-size: 50px;
   text-transform: uppercase;
   font-weight: bold;
+  color : rgb(191, 143, 216);
 
 }
 
 .nosotros p {
   margin-top: 2.5%;
   font-weight: 300;
+    color : black;
   text-align: center;
 }
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Group;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GroupController extends Controller
 {
@@ -13,7 +15,11 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+        $groups= group::all();
+
+        $title='Listado de Grupos';
+
+        return view('home.group', compact('groups','title'));
     }
 
     /**
@@ -45,7 +51,7 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-       
+    
     }
 
     /**

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
-use App\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -15,7 +16,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts= post::all();
+
+
+        return view('/home/post.index', compact('posts'));
     }
 
     /**
@@ -24,8 +28,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {              
+       return view('/home/post.create');
+        
     }
 
     /**
@@ -34,9 +39,15 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $data= request()->all();
+
+        Post::create([
+            'title'=> $data['title'],
+            'body'=> $data['body'],
+        ]);
+        return redirect()->route('post.index');
     }
 
     /**
@@ -47,7 +58,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+    
     }
 
     /**
@@ -84,3 +95,4 @@ class PostController extends Controller
         //
     }
 }
+	
