@@ -33,13 +33,15 @@ Route::get('/person', 'PersonController@index');
 
 Route::get('/group', 'GroupController@index');
 
-Route::get('/post', 'PostController@index');
+
+Route::post('/index', 'PostController@create');
+Route::get('/index', 'PostController@index');
+
+
 Route::get('/post/create', 'PostController@create');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/post/{id}', 'PostsController@show')->name('posts.show');
-
-Route::resource('terceros' , 'TerceroController');
 
 Auth::routes();

@@ -24,6 +24,8 @@
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/logged/headerLogged.css') }}" rel="stylesheet">
 
+    @stack('styles')
+
 </head>
 <body>
     <div id="app">
@@ -49,10 +51,10 @@
 
                         @guest<li class="nav-item">
                           <li class="nav-item">
-                              <a class="nav-link" href="welcome/#nosotros">{{ __('Nosotros') }}</a>
+                              <a class="nav-link" href="welcome#nosotros">{{ __('Nosotros') }}</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="welcome/#contacto">{{ __('Contactanos') }}</a>
+                              <a class="nav-link" href="welcome#contacto">{{ __('Contactanos') }}</a>
                           </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
@@ -65,7 +67,7 @@
                         @else
                           <ul class="header-logged">
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                              <a class="nav-link" href="{{ route('index') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{ url('profile/profile') }}">{{ __('Mi perfil') }}</a>
