@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/person/welcome', function () {
-    return view('welcome');
+    return view('home.index');
 });
 /**------------------------*/
 
