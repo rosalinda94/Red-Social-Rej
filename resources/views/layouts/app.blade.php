@@ -50,12 +50,7 @@
                         <!-- Authentication Links -->
 
                         @guest<li class="nav-item">
-                          <li class="nav-item">
-                              <a class="nav-link" href="welcome#nosotros">{{ __('Nosotros') }}</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="welcome#contacto">{{ __('Contactanos') }}</a>
-                          </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                             </li>
@@ -67,7 +62,7 @@
                         @else
                           <ul class="header-logged">
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('index') }}">{{ __('Home') }}</a>
+                              <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{ url('profile/profile') }}">{{ __('Mi perfil') }}</a>

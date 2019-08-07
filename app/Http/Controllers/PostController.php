@@ -22,11 +22,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts= post::all();
+        $posts= post::latest()->paginate(10);
         $users= user::all();
 
 
-        return view('/home.index', compact('posts', 'users'));
+        return view('home.index', compact('posts', 'users'));
     }
 
     /**
@@ -54,7 +54,7 @@ class PostController extends Controller
         'image' => $nombreArchivo,
         'user_id' => Auth::id(),
       ]);
-        return view('/home.index');
+        return redirect('/index');
 
     }
 
