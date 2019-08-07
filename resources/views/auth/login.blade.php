@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
+@push('styles')
+  <link href="{{ asset('css/login-registro/login.css') }}" rel="stylesheet">
+@endpush
 @section('content')
-<link href="{{ asset('css/login-registro/login.css') }}" rel="stylesheet">
+
 
 <div class="container">
         <div id="login" class="col-md-8">

@@ -15,9 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/person/welcome', function () {
+Route::get('/welcome', function () {
     return view('home.index');
 });
+
+Route::get('/profile/profile', function () {
+    return view('profile.profile');
+});
+
+
 /**------------------------*/
 
 /**------------------------*/
