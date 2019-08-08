@@ -31,11 +31,11 @@
              <a class="profile-picture" href="profile.php" ><img src="storage\{{ Auth::user()->person->avatar }}"  alt=""></a>
              <textarea name="name" rows="1" cols="60" class="comentario" placeholder="¿Qué estas pensando...?"></textarea>
 
-           </form>        
+           </form>
 
         </dir>
 
-        
+
       <article class="publicacion">
       <h2>aca van los post ir a post</h2>
        </article>

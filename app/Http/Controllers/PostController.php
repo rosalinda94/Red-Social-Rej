@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\User;
+use App\group;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,11 +23,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts= post::all();
+        $posts= post::latest()->paginate(10);
         $users= user::all();
+        $groups= group::all();
 
 
-        return view('/home/post.index', compact('posts', 'users'));
+        return view('home.index', compact('posts', 'users','groups'));
+
     }
 
     /**
@@ -29,10 +37,29 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {              
-       return view('/home/post.create');
-        
+
+    protected function validator(array $data)
+    {
+         return Validator::make($data, [
+             'title' => ['required', 'string', 'max:255'],
+             'body' => ['required', 'string', 'max:255'],
+             'image' => ['required', 'string'],
+         ]);
+    }
+
+    public function create(Request $data)
+    {
+      $ruta= request()->file('avatar')->store('public');
+       $nombreArchivo= basename($ruta);
+
+       $post = Post::create([
+        'title' => $data['title'],
+        'body' => $data['body'],
+        'image' => $nombreArchivo,
+        'user_id' => Auth::id(),
+      ]);
+        return redirect('/index');
+
     }
 
     /**
@@ -43,7 +70,6 @@ class PostController extends Controller
      */
     public function store()
     {
-        $data= request()->all();
 
         Post::create([
             'title'=> $data['title'],
@@ -61,7 +87,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-    
+
     }
 
     /**
@@ -98,4 +124,3 @@ class PostController extends Controller
         //
     }
 }
-	

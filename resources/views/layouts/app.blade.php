@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/registracion.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,7 +23,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/logged/headerLogged.css') }}" rel="stylesheet">
 
+    @stack('styles')
 
 </head>
 <body>
@@ -48,7 +51,7 @@
                         <!-- Authentication Links -->
 
                         @guest<li class="nav-item">
-   
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                             </li>
@@ -58,28 +61,38 @@
                                 </li>
                             @endif
                         @else
-                        
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
-                                </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar Sesion') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                          <ul class="header-logged">
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('profile/profile') }}">{{ __('Mi perfil') }}</a>
+                            </li>
+                          </ul>
+                          <ul>
+                            <li><i id="notificaciones" class="fas fa-bell"></i></li>
+                            <li>
+                              <div class="cuadrado">
+                                <img id="fotoPerfil" src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="40px">
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Cerrar Sesion') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                            </li>
+                          </ul>
+
                         @endguest
                     </ul>
                 </div>
@@ -89,6 +102,7 @@
         <main class="py-4">
             @yield('content')
             @yield('nosotros')
+
         </main>
     </div>
 

@@ -5,12 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Post extends Model 
+class Post extends Model
 {
- 
+
   protected $table = 'posts';
   protected $fillable = [
-    'title', 'body', 'image', 'user_id',
+     'body', 'image', 'user_id',
   ];
 
   public function user(){
@@ -24,6 +24,3 @@ class Post extends Model
     return $this->belongsTo(Group::class);
   }
 }
-
-
- 
