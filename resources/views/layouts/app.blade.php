@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/registracion.js') }}" defer></script>
+    <script src="{{ asset('js/loading.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +25,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/logged/headerLogged.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
 
     @stack('styles')
 

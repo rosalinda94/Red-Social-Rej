@@ -14,6 +14,7 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             $table->text('body');
             $table->string('image')->nullable();
@@ -23,7 +24,8 @@ class CreatePostsTable extends Migration
 
             $table->foreign('group_id')->references('id')->on('groups');
             $table->foreign('user_id')->references('id')->on('users');
-        });
+
+       });
 
     }
 

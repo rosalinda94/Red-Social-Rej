@@ -4,7 +4,7 @@
   <link href="{{ asset('css/login-registro/login.css') }}" rel="stylesheet">
 @endpush
 @section('content')
-
+@include('home.loading')
 
 <div class="container">
         <div id="login" class="col-md-8">

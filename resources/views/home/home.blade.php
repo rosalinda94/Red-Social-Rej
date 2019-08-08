@@ -18,7 +18,7 @@
 
       <article class="Listado-completo">
         <h1>home</h1>
-         <!-- Incluyo la seccion de los grupos@include('/home.group')  -->
+        @include('/home.group')
       </article>
     </section>
 

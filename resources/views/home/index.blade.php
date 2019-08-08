@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
   <body class="body">
 
+    @include('home.loading')
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <div class="home-logueado">
+
 <section class="aside">
       <article class="profile-aside">
        <a class="profile-picture" href="profile/profile"><img src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="50px"> </a>
@@ -22,6 +23,7 @@
 <!-- inicio home principal -->
 
     <section class="principal">
+
       @include('partials.posteo')
 
       @include('partials.publicaciones')
