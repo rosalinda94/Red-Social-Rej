@@ -1,32 +1,45 @@
-
 window.onload=function(){
-  let formRegister = document.querySelector('.formRegistro');
-  let campoName = document.querySelector('input[name=name]');
-  let campoLastName = document.querySelector('input[name=lastName]');
-  let campoPartner = document.querySelector('input[name=partner]');
-  let campoSex = document.querySelector('input[name=sex]');
-  let campoEmail = document.querySelector('input[name=email]');
-  let campoPassword = document.querySelector('input[name=password]');
-  let campoPasswordConfirm = document.querySelector('input[name=password-confirm]');
+  let formRegister = document.getElementById('formularioRegistro');
+  let campoName = document.getElementById('name');
+  let campoLastName = document.getElementById('lastName');
+  let campoPartner = document.getElementById('partner');
+  let campoSex = document.getElementById('sex');
+  let campoEmail = document.getElementById('email');
+  let campoPassword = document.getElementById('password');
+  let campoPasswordConfirm = document.getElementById('password-confirm');
+  let btn = document.getElementById('submit');
 
 
-  campoName.onblur=function(){
-    console.log('Hiciste foco en el campo nombre');
-
-    // if(this.value.trim() == ''){
-    //   alert('El campo nombre no puede estar vacio');
-    // } else if (this.value.length > 4){
-    //   alert('Debes tener un nombre de mas de 4 letras');
-    // }
+  var validarNombre = function(event){
+    if(campoName.value.trim() == ''){
+      alert('El campo nombre no puede estar vacio');
+      event.preventDefault();
+    } else if (campoName.value.length < 4){
+      alert('Debes tener un nombre de mas de 4 letras');
+      event.preventDefault();
+    }
   }
+  // var validarApellido = function(event){
+  //   if(campoLastName.value.trim() == ''){
+  //     alert('El campo apellido no puede estar vacio');
+  //     event.preventDefault();
+  //   } else if (campoLastName.value.length < 4){
+  //     alert('Debes tener un nombre de mas de 4 letras');
+  //     event.preventDefault();
+  //   }
+  // }
+
+  // formRegister.onsubmit()= function(event){ // ver porque no me captura el submit
+  //   if(campoName.value.trim() == ''){
+  //     alert('El campo nombre es obligatorio');
+  //     event.preventDefault();
+  //   }
+  // }
+  var validar = function(event){
+    validarNombre(event);
+    validarApellido(event);
+
+  };
+
+  formRegister.addEventListener('submit',validar);
 }
-
-
-
-
-// formRegister.onsubmit()= function (event){
-//   if(campoName.value.trim() == ''){
-//     alert('El campo nombre es obligatorio');
-//     event.preventDefault();
-//   }
-//}

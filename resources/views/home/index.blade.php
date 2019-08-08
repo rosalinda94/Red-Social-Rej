@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-
   <body class="body">
 
+    @include('home.loading')
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <div class="home-logueado">
+
 
 <!-- inicio home principal -->
 
     <section class="principal">
+
       @include('partials.posteo')
 
 

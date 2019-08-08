@@ -22,20 +22,49 @@ h3 {
   margin-right: auto;
   width: 23%;
   padding-bottom: 5%;
+  animation-name: logo;
+  animation-duration: 2s;
+}
+
+@keyframes logo {
+  from{
+   opacity: 0;
+   transform: scale(.1) rotate(-180deg);
+   }
+  to{
+    opacity: 1;
+    transform:scale(1) rotate(0deg) ;
+  }
 }
 
 .home h1 {
   color: #fff;
   text-align: center;
   font-size:6em ;
+  animation-name: letras;
+  animation-duration: 5s;
+
 }
+
 .home h2 {
   color: #fff;
   text-align: center;
   font-family: 'roboto', sans-serif;
   font-weight: 900;
   font-style: italic;
+  animation-name: letras;
+  animation-duration: 9s;
 }
+
+@keyframes letras {
+  from {
+   opacity: 0;
+   }
+  to{
+   opacity: 1;
+   }
+}
+
 
 .home .mobile,
 .rmobile{
