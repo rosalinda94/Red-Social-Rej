@@ -57,7 +57,7 @@
                               <a class="nav-link" href="welcome#nosotros">{{ __('Nosotros') }}</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="welcome#contacto">{{ __('Contatanos') }}</a>
+                              <a class="nav-link" href="welcome#contacto">{{ __('Contactanos') }}</a>
                           </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
@@ -86,7 +86,7 @@
 
                                     </div>
                             </li>
-                            
+
                             <li>
                               <div class="cuadrado">
                                 <img id="fotoPerfil" src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="40px">
