@@ -64,7 +64,6 @@ class PostController extends Controller
        $post = Post::create([
         'body' => $data['body'],
         'image' => $nombreArchivo,
-
         'group_id' => $data['actividad'],
         'etiqueta_id' => $data['etiqueta'],
         'user_id' => Auth::id(),
@@ -140,11 +139,5 @@ class PostController extends Controller
 
       return redirect('/index');
     }
-     /*
-    public function destroy($id)
-    {
-       $post=Post::find($id);
-       $post->delete();
-       return redirect()->route('post.index');
-    }*/
+   
 }

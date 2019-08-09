@@ -1,10 +1,10 @@
 <?php
 
-use App\Group;
+use App\Post;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GroupSeeder extends Seeder
+class PostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class GroupSeeder extends Seeder
      */
     public function run()
     {
-      factory(Group::class, 3)->create();
+      factory(Post::class, 3)->create();
     }
 }
