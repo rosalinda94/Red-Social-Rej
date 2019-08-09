@@ -19,10 +19,19 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('image')->nullable();
             $table->bigInteger('user_id')->unsigned();
+<<<<<<< HEAD
             // $table->bigInteger('group_id')->unsigned();
             $table->timestamps();
 
             // $table->foreign('group_id')->references('id')->on('groups');
+=======
+            $table->bigInteger('group_id')->nullable()->unsigned();
+            $table->bigInteger('etiqueta_id')->nullable()->unsigned();
+            $table->timestamps();
+
+            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('etiqueta_id')->references('id')->on('users');
+>>>>>>> 8e6537b022ef4628be32b6f38fc08fae5371c9cf
             $table->foreign('user_id')->references('id')->on('users');
 
        });

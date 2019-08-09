@@ -18,7 +18,7 @@
           @include('partials.grupos')
       </article>
 
-     
+
     </section>
 <!-- inicio home principal -->
 
@@ -32,7 +32,7 @@
 
 <section class="aside2">
       <article class="publicidad">
-        publicidad
+        @include('partials.publicidad')
       </article>
       <article class="calendario">
         calendario

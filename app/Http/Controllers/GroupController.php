@@ -19,7 +19,7 @@ class GroupController extends Controller
 
         $title='Listado de Grupos';
 
-        return view('home.group', compact('groups','title'));
+        return view('home.grupos', compact('groups','title'));
     }
 
     /**
@@ -51,7 +51,7 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-    
+
     }
 
     /**

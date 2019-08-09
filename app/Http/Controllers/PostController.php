@@ -23,13 +23,22 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts= post::latest()->paginate(10);
-        $users= user::all();
-        $groups= group::all();
+        $posts= Post::latest()->paginate(2);
+        $users= User::all();
+        $groups= Group::all();
 
 
         return view('home.index', compact('posts', 'users','groups'));
 
+    }
+
+    public function filter(Request $data)
+    {
+        $posts= Post::where('group_id', '=', $data['id'])->latest()->paginate(2);
+        $users= User::all();
+        $groups= Group::all();
+
+        return view('home.index', compact('posts', 'users','groups'));
     }
 
     /**
@@ -41,9 +50,9 @@ class PostController extends Controller
     protected function validator(array $data)
     {
          return Validator::make($data, [
-             'title' => ['required', 'string', 'max:255'],
              'body' => ['required', 'string', 'max:255'],
              'image' => ['required', 'string'],
+
          ]);
     }
 
@@ -53,9 +62,10 @@ class PostController extends Controller
        $nombreArchivo= basename($ruta);
 
        $post = Post::create([
-        'title' => $data['title'],
         'body' => $data['body'],
         'image' => $nombreArchivo,
+        'group_id' => $data['actividad'],
+        'etiqueta_id' => $data['etiqueta'],
         'user_id' => Auth::id(),
       ]);
         return redirect('/index');
@@ -72,9 +82,11 @@ class PostController extends Controller
     {
 
         Post::create([
-            'title'=> $data['title'],
             'body'=> $data['body'],
             'image' => $data['image'],
+            'group_id' => $data['actividad'],
+            'etiqueta_id' => $data['etiqueta'],
+            'user_id' => Auth::id(),
         ]);
         return redirect()->route('post.index');
     }
@@ -119,8 +131,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+
+
+    public function destroy(Request $request) {
+      $post = Post::findOrFail($request->id);
+      $post->delete();
+
+      return redirect('/index');
     }
+   
 }

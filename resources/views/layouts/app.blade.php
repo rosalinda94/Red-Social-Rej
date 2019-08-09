@@ -77,14 +77,23 @@
                             </li>
                           </ul>
                           <ul>
-                            <li><i id="notificaciones" class="fas fa-bell"></i></li>
+                            <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><i id="notificaciones" class="fas fa-bell"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" >El usuario {{ Auth::user()->name }} Te etiqueto en una publicacion
+                                        </a>
+
+                                    </div>
+                            </li>
+                            
                             <li>
                               <div class="cuadrado">
                                 <img id="fotoPerfil" src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="40px">
                               </div>
                             </li>
                             <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
