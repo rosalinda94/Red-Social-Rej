@@ -53,7 +53,12 @@
                         <!-- Authentication Links -->
 
                         @guest<li class="nav-item">
-
+                          <li class="nav-item">
+                              <a class="nav-link" href="welcome#nosotros">{{ __('Nosotros') }}</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="welcome#contacto">{{ __('Contatanos') }}</a>
+                          </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                             </li>
@@ -104,7 +109,6 @@
         <main class="py-4">
             @yield('content')
             @yield('nosotros')
-
         </main>
     </div>
 

@@ -1,19 +1,25 @@
 @extends('layouts.app')
 
+@push('styes')
+
+@endpush
+
 @section('content')
+  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
   <body class="body">
 
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <div class="home-logueado">
     <section class="aside">
       <article class="profile-aside">
          <a href="profile.php">
-          <img src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="50px">
+           <div class="cuadrado">
+             <img id="fotoPerfil" src="storage\{{ Auth::user()->person->avatar }}">
+           </div>
         </a>
 
         <!-- poner el nombre del usuario -->
-        <a class="profile-picture" href="profile.php"><h3 class="user-name"> {{Auth::user()->name }} <span class="caret"></span></h3></a>
+        <a id="nombreUsuario" href="profile.php"><h3 class="user-name"> {{Auth::user()->name }} <span class="caret"></span></h3></a>
       </article>
 
       <article class="Listado-completo">
@@ -25,15 +31,6 @@
 <!-- inicio home principal -->
 
     <section class="principal">
-      <article class="publicar">
-        <dir class="que-pensas">
-           <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}" >
-             <a class="profile-picture" href="profile.php" ><img src="storage\{{ Auth::user()->person->avatar }}"  alt=""></a>
-             <textarea name="name" rows="1" cols="60" class="comentario" placeholder="¿Qué estas pensando...?"></textarea>
-
-           </form>
-
-        </dir>
 
 
       <article class="publicacion">

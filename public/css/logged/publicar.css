@@ -1,0 +1,73 @@
+/* publicar */
+
+.cuadrado2 {
+  background: url("{{ Auth::user()->person->avatar }"}.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
+  background-size: cover;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+}
+
+.cuadrado2 #fotoPerfil2 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.principal {
+  width: 700px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.que-pensas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  margin: 10px;
+}
+
+.que-pensas .comentario{
+  color: #878786;
+  border: none;
+  border-bottom: 1px solid #878786;
+  padding: 15px;
+}
+
+.que-pensas img {
+  width: 60px;
+  margin: 10px;
+}
+
+/* .custom-file-upload {
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  background-color: #ececec;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
+
+/* que publicar? */
+.que-publicar{
+  display: flex;
+}
+
+.que-publicar #avatar{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+
+
+
+.
