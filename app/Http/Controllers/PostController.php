@@ -23,13 +23,22 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts= post::latest()->paginate(10);
-        $users= user::all();
-        $groups= group::all();
+        $posts= Post::latest()->paginate(2);
+        $users= User::all();
+        $groups= Group::all();
 
 
         return view('home.index', compact('posts', 'users','groups'));
 
+    }
+
+    public function filter(Request $data)
+    {
+        $posts= Post::where('group_id', '=', $data['id'])->latest()->paginate(2);
+        $users= User::all();
+        $groups= Group::all();
+
+        return view('home.index', compact('posts', 'users','groups'));
     }
 
     /**
@@ -42,7 +51,7 @@ class PostController extends Controller
     {
          return Validator::make($data, [
              'body' => ['required', 'string', 'max:255'],
-             'image' => ['required', 'string'],  
+             'image' => ['required', 'string'],
 
          ]);
     }
@@ -128,7 +137,7 @@ class PostController extends Controller
     public function destroy(Request $request) {
       $post = Post::findOrFail($request->id);
       $post->delete();
-     
+
       return redirect('/index');
     }
      /*

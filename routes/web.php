@@ -30,6 +30,8 @@ Route::delete('/post/{id}', 'PostController@destroy');
 
 /**------------------------*/
 
+Route::post('/filtrarCategoria', 'PostController@filter');
+
 
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');
 
@@ -40,6 +42,7 @@ Route::get('/group', 'GroupController@index');
 
 Route::post('/index', 'PostController@create');
 Route::get('/index', 'PostController@index');
+
 
 
 Route::get('/post/create', 'PostController@create');
