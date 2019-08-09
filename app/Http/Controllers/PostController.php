@@ -41,9 +41,9 @@ class PostController extends Controller
     protected function validator(array $data)
     {
          return Validator::make($data, [
-             'title' => ['required', 'string', 'max:255'],
              'body' => ['required', 'string', 'max:255'],
-             'image' => ['required', 'string'],
+             'image' => ['required', 'string'],  
+
          ]);
     }
 
@@ -53,9 +53,11 @@ class PostController extends Controller
        $nombreArchivo= basename($ruta);
 
        $post = Post::create([
-        'title' => $data['title'],
         'body' => $data['body'],
         'image' => $nombreArchivo,
+
+        'group_id' => $data['actividad'],
+        'etiqueta_id' => $data['etiqueta'],
         'user_id' => Auth::id(),
       ]);
         return redirect('/index');
@@ -72,9 +74,11 @@ class PostController extends Controller
     {
 
         Post::create([
-            'title'=> $data['title'],
             'body'=> $data['body'],
             'image' => $data['image'],
+            'group_id' => $data['actividad'],
+            'etiqueta_id' => $data['etiqueta'],
+            'user_id' => Auth::id(),
         ]);
         return redirect()->route('post.index');
     }
@@ -119,8 +123,19 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    public function destroy(Request $request) {
+      $post = Post::findOrFail($request->id);
+      $post->delete();
+     
+      return redirect('/index');
+    }
+     /*
     public function destroy($id)
     {
-        //
-    }
+       $post=Post::find($id);
+       $post->delete();
+       return redirect()->route('post.index');
+    }*/
 }

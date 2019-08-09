@@ -21,20 +21,20 @@
        </div>
    </div>
 
-   <select class="btn btn-outline-secondary">
+   <select class="btn btn-outline-secondary" id="etiqueta" name="etiqueta"  > 
      <option disabled selected>Etiquetar a </option>
      @forelse($users as $user)
-     <option value="fel"> {{$user->name }}</option>
+     <option id="etiqueta" name="etiqueta"  value="{{$user->id}}"> {{$user->name }}</option>
          @empty
    <option>no hay amigos</option>
    @endforelse
 
    </select>
-   <select class="btn btn-outline-secondary">
+   <select class="btn btn-outline-secondary" id="actividad" name="actividad" >
      <option disabled selected>Actividad deportiva  </option>
 
         @forelse($groups as $group)
-    <option value="fel">{{$group->name }}</option>
+    <option id="actividad" name="actividad" value="1">{{$group->name }}</option>
          @empty
    <option>No existen actividades deportivas</option>
    @endforelse

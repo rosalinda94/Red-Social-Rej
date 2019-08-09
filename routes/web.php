@@ -26,7 +26,11 @@ Route::get('/profile/profile', function () {
 
 /**------------------------*/
 
+Route::delete('/post/{id}', 'PostController@destroy');
+
 /**------------------------*/
+
+
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');
 
 Route::get('/person', 'PersonController@index');
