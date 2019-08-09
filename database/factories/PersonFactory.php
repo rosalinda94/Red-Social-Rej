@@ -14,7 +14,7 @@ $factory->define(\App\Person::class, function (Faker $faker) {
         'sex'=>$faker->title,
         'avatar'=>$faker->imageUrl,
         'email' => $faker->unique()->safeEmail,
-        'user'=>$faker->$user,
+        'user_id' => App\User::all()->random()->id,
        
     ];
 });
