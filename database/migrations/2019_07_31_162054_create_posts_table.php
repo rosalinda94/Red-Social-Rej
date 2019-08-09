@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->bigInteger('etiqueta_id')->nullable()->unsigned();
             $table->timestamps();
 
+
             $table->foreign('group_id')->references('id')->on('groups');
             $table->foreign('etiqueta_id')->references('id')->on('users');
             $table->foreign('user_id')->references('id')->on('users');
