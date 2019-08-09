@@ -74,6 +74,13 @@ h3 {
   font-size: 18px;
 }
 
+.list-group #botonCategorias{
+  background-color: #662382;
+  border-color: #575756;
+}
+
+
+
 /* ------------------------- aside  ------------------------ */
 
 .aside{

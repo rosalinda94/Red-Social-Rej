@@ -18,7 +18,6 @@
 
       <article class="Listado-completo">
         <h1>home</h1>
-        @include('/home.group')
       </article>
     </section>
 
@@ -43,7 +42,7 @@
 
     <section class="aside2">
       <article class="publicidad">
-        publicidad
+        <img src="{{asset('/img/publicidadNike.jpg')}}" alt="">
       </article>
       <article class="calendario">
         calendario
