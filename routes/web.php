@@ -30,7 +30,7 @@ Route::delete('/post/{id}', 'PostController@destroy');
 
 /**------------------------*/
 
-Route::post('/filtrarCategoria', 'PostController@filter');
+Route::get('/filtrarCategoria', 'PostController@filter');
 
 
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');

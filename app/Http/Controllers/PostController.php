@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts= Post::latest()->paginate(2);
+        $posts= Post::latest()->paginate(1);
         $users= User::all();
         $groups= Group::all();
 
@@ -34,7 +34,7 @@ class PostController extends Controller
 
     public function filter(Request $data)
     {
-        $posts= Post::where('group_id', '=', $data['id'])->latest()->paginate(2);
+        $posts= Post::where('group_id', '=', $data['id'])->latest()->paginate(1);
         $users= User::all();
         $groups= Group::all();
 
@@ -139,5 +139,5 @@ class PostController extends Controller
 
       return redirect('/index');
     }
-   
+
 }
