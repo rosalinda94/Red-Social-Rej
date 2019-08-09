@@ -48,5 +48,6 @@
 		<!-- pasar solo estooo -->
 </ul>
 
+      {{ $posts->appends(request()->query())->links() }}
 
        </article>
