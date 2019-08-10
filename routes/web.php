@@ -23,10 +23,9 @@ Route::get('/home/profile', function () {
     return view('home.profile');
 });
 
-
+Route::delete('/post/{id}', 'PostController@destroy');
 /**------------------------*/
 
-Route::delete('/post/{id}', 'PostController@destroy');
 
 /**------------------------*/
 
@@ -54,3 +53,12 @@ Route::get('/post/{id}', 'PostsController@show')->name('posts.show');
 Route::resource('terceros' , 'TerceroController');
 
 Auth::routes();
+
+
+Route::get('/install', function(){
+  Artisan::call('storage:link');
+});
+
+Route::get('/correrMigracion', function(){
+  Artisan::call('migrate');
+});
