@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 
 class UserController extends Controller
-{  
+{
 
     /**
      * Display a listing of the resource.
@@ -16,21 +16,8 @@ class UserController extends Controller
     public function index()
     {
        return view('nosotros');
+     }
 
-    {//-----------------------------------------//
-      /*  $persons=\App\Person::all();
-
-        return view('person.index', [
-            'persons' => $persons
-        ]);*/
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
 
@@ -43,12 +30,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {//-----------------------------------------//
-       /*$person = new Person;
-        $person->name = $request->name;
-        $person->lastName = $request->lastName;
-        $person->save();
-    return redirect('person');*/
+    {
 
     }
 
@@ -60,10 +42,6 @@ class UserController extends Controller
      */
     public function show(Person $person)
     {
-        // Los agrego Rosi
-       /* return $view('Person.show', [
-            'person' => $persons,
-        ]);*/
     }
 
     /**

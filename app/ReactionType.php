@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReactionType extends Model
 {
-    protected $table = 'reactions_types'
+    protected $table = 'reactions_types';
     public $fillable = [
       'name', 'icon',
     ];

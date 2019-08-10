@@ -69,6 +69,7 @@
                             @endif
                         @else
                           <ul class="header-logged">
+
                             <li class="nav-item">
                               <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
@@ -86,7 +87,7 @@
 
                                     </div>
                             </li>
-                            
+
                             <li>
                               <div class="cuadrado">
                                 <img id="fotoPerfil" src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="40px">

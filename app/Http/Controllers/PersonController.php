@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 
 class PersonController extends Controller
-{  
+{
 
     /**
      * Display a listing of the resource.
@@ -16,15 +16,7 @@ class PersonController extends Controller
     public function index()
     {
        return view('nosotros');
-
-    {//-----------------------------------------//
-      /*  $persons=\App\Person::all();
-
-        return view('person.index', [
-            'persons' => $persons
-        ]);*/
-    }
-
+     }
 
     /**
      * Show the form for creating a new resource.
