@@ -54,10 +54,10 @@
 
                         @guest<li class="nav-item">
                           <li class="nav-item">
-                              <a class="nav-link" href="welcome#nosotros">{{ __('Nosotros') }}</a>
+                              <a class="nav-link" href="/#nosotros">{{ __('Nosotros') }}</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="welcome#contacto">{{ __('Contactanos') }}</a>
+                              <a class="nav-link" href="/#contacto">{{ __('Contactanos') }}</a>
                           </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
@@ -73,7 +73,7 @@
                               <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ url('profile/profile') }}">{{ __('Mi perfil') }}</a>
+                              <a class="nav-link" href="{{ url('home/profile') }}">{{ __('Mi perfil') }}</a>
                             </li>
                           </ul>
                           <ul>
@@ -89,7 +89,7 @@
 
                             <li>
                               <div class="cuadrado">
-                                <img id="fotoPerfil" src="storage\{{ Auth::user()->person->avatar }}"  alt="" width="40px">
+                                <img id="fotoPerfil" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="" width="40px">
                               </div>
                             </li>
                             <li class="nav-item dropdown">

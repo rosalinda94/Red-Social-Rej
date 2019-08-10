@@ -5,7 +5,15 @@
   display: flex;
   background-color: #dadad9;
   color: #575756;
+  flex-wrap: wrap;
+}
 
+.user-name {
+  font-family: 'oswald', sans-serif;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
 .infoUsuario{
@@ -29,7 +37,7 @@
 /* foto de perfil */
 .cuadrado4 {
   display: flex;
-  background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
+  /* background: url() 50% 50% no-repeat; /* 50% 50% centers image in div */ */
   width: 250px;
   height: 250px;
 }
@@ -42,3 +50,31 @@
 }
 
 /* seccion info */
+
+.datosUsuario {
+width: 400px;
+height: 900px;
+
+}
+
+.infoGeneral,
+.fotosUsuario {
+  background-color: #fff;
+  padding: 15px;
+  margin: 12px;
+  margin-top: 20px;
+}
+
+/* seccion posteo */
+
+.posteosUsuario{
+  width: 700px;
+  height: 900px;
+}
+
+.posteos{
+  background-color: #fff;
+  padding: 15px;
+  margin: 12px;
+  margin-top: 20px;
+}

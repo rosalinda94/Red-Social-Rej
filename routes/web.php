@@ -19,8 +19,8 @@ Route::get('/welcome', function () {
     return view('home.index');
 });
 
-Route::get('/profile/profile', function () {
-    return view('profile.profile');
+Route::get('/home/profile', function () {
+    return view('home.profile');
 });
 
 
