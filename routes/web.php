@@ -55,6 +55,10 @@ Route::resource('terceros' , 'TerceroController');
 Auth::routes();
 
 
-Route::get('/storage', function(){
+Route::get('/install', function(){
   Artisan::call('storage:link');
+});
+
+Route::get('/correrMigracion', function(){
+  Artisan::call('migrate');
 });
