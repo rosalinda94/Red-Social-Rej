@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('js/register.js') }}" defer></script>
+
 <link href="{{ asset('css/login-registro/register.css') }}" rel="stylesheet">
 
         @include('home.loading')
+        <div class="containerRegister">
         <div id="register" class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Te damos la bienvenida a MiClub') }} <br>
@@ -107,12 +110,11 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Foto de perfil') }}</label>
-
-                            <div class="col-md-6">
-                                <input style="color:transparent" id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}"  autocomplete="avatar" autofocus>
-
+                        <div class="subirAvatar1">
+                            <label for="avatar" class="labelAvatar">{{ __('Foto de perfil') }}</label>
+                            <div class="subirAvatar">
+                                <input style='display: none;' onchange='cambiar()' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}"  autocomplete="avatar" autofocus>
+                                  <div id="info"></div>
                                 @error('avatar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -140,5 +142,5 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
 @endsection

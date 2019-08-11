@@ -6,7 +6,7 @@
 @section('content')
 @include('home.loading')
 
-<div class="container">
+<div class="containerLogin">
         <div id="login" class="col-md-8">
             <div class="card">
                 <div class="card-header">

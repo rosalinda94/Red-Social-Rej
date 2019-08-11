@@ -5,20 +5,19 @@
 }
 
 
-.container {
+.containerLogin {
   display: flex;
   justify-content: center;
   background-image: url(/img/fondo-secundario.jpg);
   background-size: cover;
-  text-align: center;
   width: 100%;
+  margin: 0 auto;
 }
 
 #login {
   margin: 0 auto;
   padding: 8%;
   width: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center
@@ -27,6 +26,7 @@
 .card{
   display:flex;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0);
 
@@ -36,7 +36,7 @@
   font-family: 'oswald', sans-serif;
   font-weight: 600;
   font-size: 25px;
-  /*background-color:rgba(0, 0, 0, 0.8);*/
+  background-color:rgba(0, 0, 0, 0.8);
   border: 0;
   border-radius: 0rem;
   color: white;
@@ -72,14 +72,22 @@
   margin: 0 auto;
 }
 
+/* boton de login */
+
 .btn-primary{
-text-decoration: none;
-font-family: 'roboto', sans-serif;
-font-size: 20px;
-width:100%;
-color: #fff;
-border: none;
-background-color: #b58ec0;
+  text-decoration: none;
+  font-family: 'roboto', sans-serif;
+  font-size: 18px;
+  width:100%;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  background-color: #b58ec0;
+}
+
+.btn-primary:hover{
+background-color: #fff;
+color: #b58ec0;
 }
 
 .btn-link,
