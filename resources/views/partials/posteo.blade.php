@@ -5,7 +5,11 @@
     @csrf
 
  <div class="que-pensas">
+<<<<<<< HEAD
    <a class="cuadrado2" href="profile/profile"><img id="fotoPerfil2" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt=""></a>
+=======
+   <a class="cuadrado2" href="profile/profile"><img id="fotoPerfil2" src="storage\{{ Auth::user()->person->avatar }}"  alt=""></a>
+>>>>>>> b52847cb99e162916ccb462427a8a7ec60ec8bab
    <textarea name="body" rows="1" cols="60" class="comentario" placeholder="Que quieres escribir hoy?   {{Auth::user()->name }}"></textarea>
  </div>
  <div class="que-publicar">

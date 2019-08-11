@@ -13,7 +13,10 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/registracion.js') }}" defer></script>
     <script src="{{ asset('js/loading.js') }}" defer></script>
+<<<<<<< HEAD
     <script src="{{ asset('js/home.js') }}" defer></script>
+=======
+>>>>>>> b52847cb99e162916ccb462427a8a7ec60ec8bab
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
