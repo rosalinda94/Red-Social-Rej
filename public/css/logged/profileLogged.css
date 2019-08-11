@@ -1,0 +1,80 @@
+/* perfil */
+
+.perfilLogueado{
+  padding-top: 50px;
+  display: flex;
+  background-color: #dadad9;
+  color: #575756;
+  flex-wrap: wrap;
+}
+
+.user-name {
+  font-family: 'oswald', sans-serif;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.infoUsuario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* perfil usuario */
+.portadaUsuario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+  background-color: #6f6f6e;
+  padding-top: 14px;
+
+}
+
+/* foto de perfil */
+.cuadrado4 {
+  display: flex;
+  /* background: url() 50% 50% no-repeat; /* 50% 50% centers image in div */ */
+  width: 250px;
+  height: 250px;
+}
+
+.cuadrado4 #fotoPerfil4 {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+/* seccion info */
+
+.datosUsuario {
+width: 400px;
+height: 900px;
+
+}
+
+.infoGeneral,
+.fotosUsuario {
+  background-color: #fff;
+  padding: 15px;
+  margin: 12px;
+  margin-top: 20px;
+}
+
+/* seccion posteo */
+
+.posteosUsuario{
+  width: 700px;
+  height: 900px;
+}
+
+.posteos{
+  background-color: #fff;
+  padding: 15px;
+  margin: 12px;
+  margin-top: 20px;
+}

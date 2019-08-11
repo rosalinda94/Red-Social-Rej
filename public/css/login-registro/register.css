@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-image: url(/img/fondo-secundario.jpg);
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+}
+
+#register {
+  margin: 0;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 140vh;
+  align-items: center;
+  width: 100%;
+}
+
+.card{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.card-header {
+  font-family: 'oswald', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  /*background-color:rgba(0, 0, 0, 0.8);*/
+  border: 0;
+  border-radius: 0rem;
+  color: white;
+}
+
+.card-header p{
+  font-family: 'roboto', sans-serif;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.card-body{
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* #avatar {
+ width: 0.1px;
+ height: 0.1px;
+ opacity: 0;
+ overflow: hidden;
+ position: absolute;
+ z-index: -1;
+ }
+
+ label[for="avatar"] {
+ font-size: 14px;
+ font-weight: 600;
+ color: #fff;
+ background-color: #000;
+ display: flex;
+ justify-content: center;
+ transition: all .5s;
+ cursor: pointer;
+ padding: 10px !important;
+ text-align: center;
+} */
+
+/* cambiar color campo a completar */
+
+#name,
+#lastName,
+#partner,
+#sex,
+#email,
+#password,
+#password-confirm {
+  background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #878786;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* boton de enviar */
+.col-md-8 .offset-md-4 {
+  margin: 0 auto;
+}
+
+.btn-primary{
+text-decoration: none;
+font-family: 'roboto', sans-serif;
+font-size: 20px;
+width:100%;
+color: #fff;
+border: none;
+background-color: #b58ec0;
+}
+
+.btn-link,
+.loginDesdeRegistro{
+  color:#b58ec0;
+}
