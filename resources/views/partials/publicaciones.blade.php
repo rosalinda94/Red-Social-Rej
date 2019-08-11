@@ -42,9 +42,23 @@
                  </form>
               @endif
 
+                  @forelse($comments as $comment)
+                  @if ($post->id == $comment->post_id)
+                 <b>{{$post->user->name }}</b> 
+                <p>{{$comment->body }}</p>
+              @endif
+                   
+
+                @empty
+                @endforelse
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
-                <input type="text" class="form-control" id="comment" placeholder="Deja aca tu comentario">
+                <form action="comment/create" method="POST">
+                 
+                   {{ csrf_field() }}
+                   <input type="hidden" value='1' name="postId">
+                    <input type="text" class="form-control" id="body" name="body" placeholder="Deja aca tu comentario">
+                 </form>
               </div>
 
 			        </div>
