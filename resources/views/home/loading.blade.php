@@ -2,4 +2,3 @@
   <div id='carga' class="">
   </div>
 </div>
-<div class="container">
