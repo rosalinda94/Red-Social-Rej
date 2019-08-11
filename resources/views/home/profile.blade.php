@@ -13,9 +13,9 @@
   </div>
   <h3 class="user-name">{{Auth::user()->person->name }} {{Auth::user()->person->lastName }}</h3>
 </div>
-  <form class="" action="index" method="post" enctype="multipart/form-data">
-    <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Compartí tus imagenes') }}</label>
-    <input id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
+  <form class="fotoPortada" action="index" method="post" enctype="multipart/form-data">
+    <label for="avatar" class="labelAvatar">{{ __('Foto de portada') }}</label>
+    <input style='display: none;' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
   </form>
 </section>
 

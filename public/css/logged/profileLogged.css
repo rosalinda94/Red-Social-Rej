@@ -29,22 +29,44 @@
   justify-content: center;
   height: 70vh;
   width: 100%;
-  background-color: #6f6f6e;
+  background-color: #939393;
   padding-top: 14px;
 
 }
+
+/* foto portada */
+.fotoPortada{
+display: flex;
+justify-content: center;
+}
+
+.labelAvatar{
+    padding:.375rem .75rem;
+    background: #000;
+    color:#fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'roboto', sans-serif;
+    font-size: 12px;
+}
+
+.labelAvatar:hover{
+  background-color: #fff;
+  color: #000;
+}
+
 
 /* foto de perfil */
 .cuadrado4 {
   display: flex;
   /* background: url() 50% 50% no-repeat; /* 50% 50% centers image in div */ */
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .cuadrado4 #fotoPerfil4 {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   padding: 6px;
 }
