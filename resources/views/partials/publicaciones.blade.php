@@ -5,11 +5,10 @@
 			<article class="publicacion">
 			    <div class="">
 
-<<<<<<< HEAD
+
               <a class="profile-picture" href="profile/profile"><img src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="" width="50px"></a>
-=======
-              <a class="profile-picture" href="profile/profile"><img src="storage\{{ $post->user->person->avatar }}"  alt="" width="50px"></a>
->>>>>>> b52847cb99e162916ccb462427a8a7ec60ec8bab
+
+
 			        <b>{{$post->user->name}}</b><br>
               @isset($post->group)
               <p>Este post pertenece a la categoria :<b> {{$post->group->name}}</b></p>
@@ -18,7 +17,7 @@
 
 
               <p>{{$post->body }}</p>
-<<<<<<< HEAD
+
               <img src="/storage/{{$post->image}}"  alt="" width="300px" height="300px">
               <br> <br>
 			        </div>
@@ -34,29 +33,13 @@
                     $numero_aleatorio = rand(1,5) . ' veces compartidos'; ?></i>
                   </div>
                 </div>
-=======
-              <img src="storage\{{ $post->image  }}"  alt="" width="300px" height="300px">
-              <br> <br>
-			        </div>
-			        <div class="publicacion-user">
 
-
-              <i class="far fa-thumbs-up"> Me gusta</i>
-              <i class="far fa-thumbs-down"> No me gusta</i>
-              <i class="fas fa-share">  Compartir</i>
-              <i><?=
-              $numero_aleatorio = rand(1,5) . ' veces compartidos'; ?></i>
->>>>>>> b52847cb99e162916ccb462427a8a7ec60ec8bab
               @if (auth()->id()==$post->user_id)
                 <form action="{{URL::to('/')}}/post/{{ $post->id }}" method="POST">
                    {{ csrf_field() }}
                    {{ method_field('DELETE') }}
                    <button type="submit">Eliminar</button>
                  </form>
-<<<<<<< HEAD
-=======
-
->>>>>>> b52847cb99e162916ccb462427a8a7ec60ec8bab
               @endif
 
               <div class="form-row">

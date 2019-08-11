@@ -80,7 +80,6 @@ i {
 
 /* ------------------------- principal  ------------------------ */
 
-<<<<<<< HEAD
 /* publicar (son los posteos?) */
 .botones{
   display: flex;
@@ -118,10 +117,6 @@ i {
 .share-button{
   width: 140px;
 }
-
-=======
-/* publicar */
->>>>>>> b52847cb99e162916ccb462427a8a7ec60ec8bab
 
 
 /* ------------------------- aside2  ------------------------ */
