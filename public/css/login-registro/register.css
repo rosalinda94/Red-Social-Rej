@@ -1,4 +1,4 @@
-.container {
+.containerRegister {
   display: flex;
   justify-content: center;
   background-image: url(/img/fondo-secundario.jpg);
@@ -22,7 +22,7 @@
   display:flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -30,7 +30,7 @@
   font-family: 'oswald', sans-serif;
   font-weight: 600;
   font-size: 25px;
-  /*background-color:rgba(0, 0, 0, 0.8);*/
+  background-color:rgba(0, 0, 0, 0.8);
   border: 0;
   border-radius: 0rem;
   color: white;
@@ -48,6 +48,27 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+
+.labelAvatar{
+    padding:.375rem .75rem;
+    background: #b58ec0;
+    color:#fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    width: 48%;
+}
+
+.labelAvatar:hover{
+  background-color: #fff;
+  color: #b58ec0;
+}
+/* input subir foto de perfil */
+
+.subirAvatar1 {
+  margin: 0 auto;
+}
 
 /* #avatar {
  width: 0.1px;
@@ -96,11 +117,17 @@
 .btn-primary{
 text-decoration: none;
 font-family: 'roboto', sans-serif;
-font-size: 20px;
+font-size: 18px;
 width:100%;
 color: #fff;
 border: none;
+border-radius: 0;
 background-color: #b58ec0;
+}
+
+.btn-primary:hover{
+background-color: #fff;
+color: #b58ec0;
 }
 
 .btn-link,
