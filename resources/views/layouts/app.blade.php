@@ -13,13 +13,10 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/registracion.js') }}" defer></script>
     <script src="{{ asset('js/loading.js') }}" defer></script>
-    <script src="{{ asset('js/home.js') }}" defer></script>
-
-
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
@@ -29,6 +26,7 @@
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/logged/headerLogged.css') }}" rel="stylesheet">
     <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
+
 
     @stack('styles')
 
@@ -42,7 +40,9 @@
                     <img id='logo' src="{{asset('/img/logo-blanco.png')}}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-light navbar-toggler-icon">
+                      <i class="fas fa-bars"></i>
+                    </span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -87,7 +87,6 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" >El usuario {{ Auth::user()->name }} Te etiqueto en una publicacion
                                         </a>
-
                                     </div>
                             </li>
 
@@ -123,8 +122,6 @@
             @yield('content')
             @yield('nosotros')
         </main>
-            @yield('footer')
     </div>
-
 </body>
 </html>

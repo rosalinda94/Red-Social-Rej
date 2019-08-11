@@ -7,7 +7,7 @@
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <div class="home-logueado">
 
-<section class="aside">
+      <section class="aside">
       <article class="profile-aside">
 
        <a class="profile-picture" href="profile/profile"><img src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="" width="50px"> </a>
