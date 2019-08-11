@@ -110,4 +110,29 @@ footer{
      padding-bottom: 10px;
      padding-top: 0;
     }
+
+    .navbar-light .navbar-toggler {
+    color: #fff;
+  }
+
+  .navbar-nav{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .header-logged .nav-item{
+    margin: 10px;
+    font-size: 16px;
+  }
+
+  .nav-link{
+      padding: 10px;
+    }
+
+#fotoPerfil{
+    padding: 10px
+  }
+
+  #navbarDropdown{
+    padding: 10px;
   }
