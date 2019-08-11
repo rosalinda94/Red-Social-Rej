@@ -108,6 +108,9 @@
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+.form-control{
+  border-radius: 0;
+}
 
 /* boton de enviar */
 .col-md-8 .offset-md-4 {
@@ -133,4 +136,15 @@ color: #b58ec0;
 .btn-link,
 .loginDesdeRegistro{
   color:#b58ec0;
+}
+
+
+/* ------ comienzo responsive ------ */
+@media(max-width:736px) {
+
+.containerRegister {
+    margin: 0 auto;
+    padding-top: 25%;
+  }
+
 }

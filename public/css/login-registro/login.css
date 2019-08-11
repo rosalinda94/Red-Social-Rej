@@ -16,7 +16,7 @@
 
 #login {
   margin: 0 auto;
-  padding: 8%;
+  padding: 10%;
   width: 100%;
   flex-direction: column;
   justify-content: center;
@@ -53,19 +53,10 @@
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
+  font-family: 'roboto', sans-serif;
 }
 
-/* cambiar color campo a completar */
 
-#email,
-#password{
-  background-color: rgba(0, 0, 0, 0);
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #878786;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
 
 /* boton de enviar */
 .col-md-8 .offset-md-4 {
@@ -93,4 +84,40 @@ color: #b58ec0;
 .btn-link,
 .registroDesdeLogin{
   color:#b58ec0;
+}
+
+/* cambiar color campo a completar */
+
+.form-control {
+  background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #878786;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-control{
+  border-radius: 0;
+}
+
+
+/* ------ comienzo responsive ------ */
+@media(max-width:736px) {
+
+  #navbarSupportedContent{
+    background-color: #000;
+  }
+
+  #login {
+    margin: 0 auto;
+    padding-top: 20%;
+  }
+
+  .containerLogin{
+    height: 100vh;
+  }
+
+  .navbar-toggler-icon{
+  color: #fff;
+  }
 }

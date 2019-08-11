@@ -94,42 +94,20 @@ footer{
 }
 
 /* -------------------------  FIN Header & Footer ------------------------- */
-/* ------------------------- Inicio Responsive celular --------------------- */
-@media (max-width:700px){
 
-  /* -------------------------  Header & Footer ------------------------- */
+  /* ------ comienzo responsive ------ */
+  @media(max-width:736px) {
 
-  .links{
-    display: none;
-  }
+    #navbarSupportedContent{
+      background-color: #000;
+    }
 
-  .rmobile li ul{
-    display: none;
-    position: absolute;
-    min-width: 140px;
-  }
-
-  .rmobile li:hover ul{
-    display: block;
-  }
-  .rmobile li ul li {
-    position: relative;
-  }
-  .rmobile {
-    display: block;
-    float: right;
-  }
-  .hamburgesa {
-    padding: 5px 80px;
-  }
-  .hamburgesa ul li {
-    width: 90%;
-    text-align: center;
-    margin-top: 1%;
-  }
-
-  .rmobile ul li a {
-    display: block;
+    .navbar-toggler{
     color: #fff;
-    background-color: #00aaa9;
+    }
+
+    .navbar-brand {
+     padding-bottom: 10px;
+     padding-top: 0;
+    }
   }
