@@ -29,8 +29,16 @@ window.onload=function(){
     }
   })
 
-  campoPartner.addEventListener('click', function (){
-    if(campoSex == 0 || campoSex == 1){
+  campoPartner.addEventListener('keyup', function (){
+    if(parseInt(campoPartner.value) != true){
+      this.style.borderColor = 'red';
+    } else {
+      this.style.borderColor = 'violet';
+    }
+  })
+
+  campoSex.addEventListener('click', function (){
+    if(this.value == 0 || this.value == 1){
       this.style.borderColor = 'violet';
     }
   })
@@ -75,9 +83,11 @@ window.onload=function(){
     if(campoName.value.trim() == ''){
       alert('El campo Nombre no puede estar vacio');
       event.preventDefault();
+      campoName.style.borderColor= 'red';
     } else if (campoName.value.length < 3){
       alert('Debes tener un Nombre de mas de 3 letras');
       event.preventDefault();
+      campoName.style.borderColor= 'red';
     }
   }
 
@@ -85,9 +95,11 @@ window.onload=function(){
     if(campoLastName.value.trim() == ''){
       alert('El campo Apellido no puede estar vacio');
       event.preventDefault();
+      campoLastName.style.borderColor= 'red';
     } else if (campoLastName.value.length < 3){
       alert('Debes tener un Apellido de mas de 3 letras');
       event.preventDefault();
+      campoLastName.style.borderColor= 'red';
     }
   }
 
@@ -95,16 +107,19 @@ window.onload=function(){
     if(campoPartner.value.trim() == ''){
       alert('El campo Nro de Socio no puede estar vacio');
       event.preventDefault();
+      campoPartner.style.borderColor= 'red';
     } else if (parseInt(campoPartner.value) != true) {
         alert('El campo Nro de Socio debe ser un número');
         event.preventDefault();
+        campoPartner.style.borderColor= 'red';
     }
   }
 
       var validarSelect = function(event){  //chequear esto
-        if(campoSex.value == ''){
+        if(campoSex.value != 0 && campoSex.value !=1){
           alert('Seleccione una opcion');
           event.preventDefault();
+          campoSex.style.borderColor='red';
         }
       }
 
@@ -112,6 +127,7 @@ window.onload=function(){
         if(!emailRegex.test(campoEmail.value)){
           alert('El Email no es valido');
           event.preventDefault();
+          campoEmail.style.borderColor= 'red';
         }
       }
 
@@ -119,6 +135,8 @@ window.onload=function(){
         if (campoPassword.value.trim() == '' || campoPasswordConfirm.value.trim() == '') {
           alert("Ninguna de las Contraseñas pueden quedar vacias");
           event.preventDefault();
+          campoPassword.style.borderColor='red';
+          campoPasswordConfirm.style.borderColor= 'red';
         }
         if(campoPassword.value != campoPasswordConfirm.value ){
           alert('Las Contraseñas no coinciden');
