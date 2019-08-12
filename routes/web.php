@@ -26,6 +26,7 @@ Route::get('/home/profile', function () {
 Route::delete('/post/{id}', 'PostController@destroy');
 /**------------------------*/
 
+Route::post('/comment/create', 'CommentsController@create');
 
 /**------------------------*/
 

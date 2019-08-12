@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\User;
 use App\group;
+use App\comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -26,9 +27,10 @@ class PostController extends Controller
         $posts= Post::latest()->paginate(10);
         $users= User::all();
         $groups= Group::all();
+        $comments= comment::all();
 
 
-        return view('home.index', compact('posts', 'users','groups'));
+        return view('home.index', compact('posts', 'users','groups','comments'));
 
     }
 

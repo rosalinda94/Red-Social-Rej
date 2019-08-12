@@ -18,7 +18,7 @@
 }
 .home-logueado article {
   background-color: #fff;
-  padding: 15px;
+  padding: 10px;
   margin: 12px;
   margin-top: 20px;
 }
@@ -29,17 +29,30 @@
 
 h4 {
   font-size: 16px;
+  font-family: 'oswald', sans-serif;
 }
 
 h3 {
   font-size: 18px;
 }
 
-.list-group #botonCategorias{
-  background-color: #662382;
-  border-color: #575756;
+
+.cuadrado4 #fotoPerfil4 {
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  padding: 6px;
+  border-radius: 50%;
 }
 
+.user-name{
+  font-family: 'oswald', sans-serif;
+  font-size: 16px;
+  list-style:none;
+  text-transform: uppercase;
+  color:#575756;
+  margin: 0 auto;
+}
 
 
 /* ------------------------- aside  ------------------------ */
@@ -55,17 +68,13 @@ h3 {
   flex-direction: row;
   padding: 5px;
   margin: 0px;
+  height: 65px;
 }
 
 .profile-aside p {
   margin: 0px;
   padding: 5px;
 }
-.user-name{
-  color: #662382;
-  margin: 0px;
-}
-
 
 ul li{
   list-style-type: none;
