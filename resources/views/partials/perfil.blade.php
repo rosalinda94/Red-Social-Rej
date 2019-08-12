@@ -1,12 +1,12 @@
-
 @push('styles')
 <link href="{{ asset('css/logged/publicacion.css') }}" rel="stylesheet">
 @endpush
+
  <article class="publicacion">
       <ul>
-      	<!-- pasar solo estooo -->
-			@forelse($posts as $post)
-			<article class="publicacion">
+        <!-- pasar solo estooo -->
+      @forelse($posts as $post)
+      <article class="publicacion">
         @if (auth()->id()==$post->user_id)
           <form class="eliminar" action="{{URL::to('/')}}/post/{{ $post->id }}" method="POST">
              {{ csrf_field() }}
@@ -14,7 +14,7 @@
              <button id="eliminar" type="submit"><i class="fas fa-trash-alt"></i></button>
            </form>
         @endif
-			    <div class="quienPublica">
+          <div class="quienPublica">
               <a class="cuadrado5" href="profile/profile"><img id="fotoPerfil5" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="" width="50px"></a>
               <div class="quienPublicaInfo">
                 <h4 class="userName" >{{$post->user->name}}</h4>
@@ -67,13 +67,13 @@
                  </form>
               </div>
 
-			        </div>
-			      </article>
+              </div>
+            </article>
 
-			@empty
-			<li><br>No existen posteos </b><img src="/img/triste.jpg" width="150px"></li>
-			@endforelse
-		<!-- pasar solo estooo -->
+      @empty
+      <li><br>No existen posteos </b><img src="/img/triste.jpg" width="150px"></li>
+      @endforelse
+    <!-- pasar solo estooo -->
 </ul>
 
       {{ $posts->appends(request()->query())->links() }}

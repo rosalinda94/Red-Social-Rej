@@ -19,13 +19,14 @@ Route::get('/welcome', function () {
     return view('home.index');
 });
 
-Route::get('/home/profile', function () {
+Route::get('/profile', function () {
     return view('home.profile');
 });
 
 Route::delete('/post/{id}', 'PostController@destroy');
 /**------------------------*/
 
+Route::post('/comment/create', 'CommentsController@create');
 
 /**------------------------*/
 
@@ -42,15 +43,16 @@ Route::get('/group', 'GroupController@index');
 Route::post('/index', 'PostController@create');
 Route::get('/index', 'PostController@index');
 
+Route::get('/profile', 'PostController@show');
+
+Route::post('/profile/create', 'AdditionalController@create');
+
+Route::post('/profile/avatar', 'AdditionalController@avatar');
 
 
 Route::get('/post/create', 'PostController@create');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/post/{id}', 'PostsController@show')->name('posts.show');
-
-Route::resource('terceros' , 'TerceroController');
 
 Auth::routes();
 

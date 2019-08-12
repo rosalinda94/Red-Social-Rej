@@ -18,7 +18,7 @@
 }
 .home-logueado article {
   background-color: #fff;
-  padding: 15px;
+  padding: 10px;
   margin: 12px;
   margin-top: 20px;
 }
@@ -29,17 +29,31 @@
 
 h4 {
   font-size: 16px;
+  font-family: 'oswald', sans-serif;
 }
 
 h3 {
   font-size: 18px;
 }
 
-.list-group #botonCategorias{
-  background-color: #662382;
-  border-color: #575756;
+
+.cuadrado4 #fotoPerfil4 {
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  padding: 6px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
+.user-name{
+  font-family: 'oswald', sans-serif;
+  font-size: 16px;
+  list-style:none;
+  text-transform: uppercase;
+  color:#575756;
+  margin: 0 auto;
+}
 
 
 /* ------------------------- aside  ------------------------ */
@@ -50,26 +64,21 @@ h3 {
 
 .profile-aside {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   padding: 5px;
   margin: 0px;
+  height: 65px;
 }
 
 .profile-aside p {
   margin: 0px;
   padding: 5px;
 }
-.user-name{
-  color: #662382;
-  margin: 0px;
-}
-
 
 ul li{
   list-style-type: none;
-  font-weight: lighter;
   font-size: 13px;
   line-height: 27px;
 }
@@ -79,44 +88,6 @@ i {
 }
 
 /* ------------------------- principal  ------------------------ */
-
-/* publicar (son los posteos?) */
-.botones{
-  display: flex;
-}
-
-.like-button,
-.dislike-button,
-.share-button{
-  border: 2px solid gray;
-  border-radius: 40px;
-  width: 120px;
-  padding: .30rem .75rem;
-  color: darken(gray, 25%);
-  font-weight: bold;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
-
-.liked {
-    color: #662382;
-    border-color: currentColor;
-}
-
-.like-button:hover,
-.dislike-button:hover,
-.share-button:hover {
-    color: #662382;
-    border-color: #662382;
-}
-
-.dislike-button,
-.share-button{
-  width: 140px;
-}
 
 
 /* ------------------------- aside2  ------------------------ */

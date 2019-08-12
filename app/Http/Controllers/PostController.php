@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\User;
 use App\group;
+use App\comment;
+use App\Additional;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -25,10 +27,12 @@ class PostController extends Controller
     {
         $posts= Post::latest()->paginate(10);
         $users= User::all();
+        $additionals= Additional::all();
         $groups= Group::all();
+        $comments= comment::all();
 
 
-        return view('home.index', compact('posts', 'users','groups'));
+        return view('home.index', compact('posts', 'users','groups','comments','additionals'));
 
     }
 
@@ -38,7 +42,7 @@ class PostController extends Controller
         $users= User::all();
         $groups= Group::all();
 
-        return view('home.index', compact('posts', 'users','groups'));
+      return view('home.index', compact('posts', 'users','groups'));
     }
 
     /**
@@ -97,9 +101,15 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
+        $posts= Post::latest()->paginate(10);
+        $users= User::all();
+        $groups= Group::all();
+        $comments= comment::all();        
+        $additionals= Additional::all();
 
+        return view('home.profile', compact('posts', 'users','groups','comments','additionals'));
     }
 
     /**

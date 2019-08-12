@@ -1,0 +1,45 @@
+.list-group{
+  border-radius: 0;
+  border: none;
+  display: flex;
+
+}
+
+#botonCategorias {
+  border-radius: 0;
+  border: none;
+}
+
+.list-group-item-action{
+  border-radius: 0;
+  border: none;
+
+}
+
+.catTitulo {
+    background-color: #575756;
+    color:#ececec;
+    font-family:'oswald', sans-serif;
+    font-size: 18px;
+    height: 50px;
+}
+
+
+.catTitulo:hover{
+  background-color: #b58ec0;
+  color: #ececec;
+}
+
+.cat{
+  color: #575756;
+  background-color: #ececec;
+  border:none;
+  border-radius: 0;
+  font-family:'oswald', sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}

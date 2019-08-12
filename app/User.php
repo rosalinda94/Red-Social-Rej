@@ -9,6 +9,9 @@ class User extends Authenticatable
     public function person (){
           return $this->hasOne(Person::class);
     }
+    public function additional(){
+          return $this->hasOne(User::class);
+    }
 
     public function posts()
     {

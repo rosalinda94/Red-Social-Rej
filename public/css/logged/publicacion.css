@@ -1,0 +1,133 @@
+/* foto perfil */
+
+#fotoPerfil5 {
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 10px;
+}
+
+.quienPublica{
+  display: flex;
+  flex-direction: row;
+}
+
+.quienPublicaInfo{
+  padding: 4px;
+  margin: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.quienPublicaInfo p{
+  margin:0;
+  font-family: 'oswald', sans-serif;
+  font-size: 14px;
+}
+
+.userName{
+  font-family: 'oswald', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin:0;
+}
+
+.textoPublicacion{
+  font-family: 'roboto', sans-serif;
+  font-weight: 300;
+}
+
+.imgPublicacion{
+  object-fit: cover;
+  width: 100%;
+}
+
+/* publicar (son los posteos?) */
+.botones{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ececec;
+  border-top: 1px solid #ececec;
+}
+
+.like-button,
+.dislike-button,
+.share-button{
+  width: 150px;
+  height: 50px;
+  padding: .40rem .75rem;
+  color: #575756;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family:'oswald', sans-serif;
+  font-size: 14px;
+}
+
+
+.liked {
+    color: #662382;
+    border-color: currentColor;
+}
+
+.like-button:hover,
+.dislike-button:hover,
+.share-button:hover {
+    color: #b58ec0;
+}
+
+.fa-thumbs-up,
+.fa-thumbs-down,
+.fa-share{
+font-size: 18px;
+padding: 10px;
+}
+
+.compartido{
+  font-family:'oswald', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  margin: 20px;
+  color: #575756;
+}
+
+/* eliminar publicacion */
+
+.eliminar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#eliminar {
+    border: none;
+}
+
+article .publicacion{
+margin-top: 0;
+}
+
+.fa-trash-alt{
+  font-size: 18px;
+}
+.fa-trash-alt:hover{
+  color: #b58ec0;
+}
+
+/* comentarios del posteo */
+
+#bodyComentarios{
+border-radius: 0;
+width: 100%;
+height: 50px;
+margin-top: 20px;
+border: none;
+padding: 10px;
+background-color: #ececec;
+}
+
+.form-row{
+  border-bottom: 1px solid #ececec;
+}

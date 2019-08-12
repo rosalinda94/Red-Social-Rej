@@ -14,16 +14,15 @@ class CommentsController extends Controller
         $this->middleware('auth');
     }
  
- 
-    public function store(CommentRequest $request)
+
+    public function create(Request  $data)
     {
-        $post = Post::findOrFail($request->post_id);
- 
-        Comment::create([
-            'body' => $request->body,
-            'user_id' => Auth::id(),
-            'post_id' => $post->id
-        ]);
-        return redirect()->route('posts.show', $post->id);
+       $comment = Comment::create([
+        'body' => $data['body'],
+        'post_id' =>  $data['postid'],
+        'user_id' => Auth::id(),
+      ]);
+        return redirect('/index');
+
     }
 }
