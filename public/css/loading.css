@@ -1,4 +1,4 @@
-*,*:after, *:before{
+/* *,*:after, *:before{
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box ;
@@ -41,4 +41,4 @@
   to{
     transform: rotate(360deg);
   }
-}
+} */

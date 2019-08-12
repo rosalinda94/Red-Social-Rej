@@ -104,13 +104,14 @@
   background-color: rgba(0, 0, 0, 0);
     color: #fff;
     border: none;
-    border-bottom: 1px solid #878786;
+    border-bottom: 3px solid #878786;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 .form-control{
   border-radius: 0;
 }
+
 
 /* boton de enviar */
 .col-md-8 .offset-md-4 {
