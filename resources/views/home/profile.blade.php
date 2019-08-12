@@ -21,18 +21,21 @@
 
 <section class="datosUsuario">
 <article class="infoGeneral">
-  <a href= " ">Ingresá tus datos!</a>
+   @include('partials.register')
 </article>
 <article class="fotosUsuario">
-  <img src="storage\{{ Auth::user()->person->avatar }}" alt="">
+  <img src="storage\{{ Auth::user()->person->avatar }}" alt="" width="100px">
 </article>
 
 </section>
 <section class="posteosUsuario">
 <article class="posteos">
-  {{-- @include('partials.posteo') --}}
 
-  <p>aca van los posts del usuario</p>
+      @include('partials.posteo')
+
+</article>
+<article class="posteos">
+      @include('partials.perfil')
 </article>
 </section>
   </div>

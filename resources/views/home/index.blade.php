@@ -5,6 +5,7 @@
 
     @include('home.loading')
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+
     <div class="home-logueado">
 
       <section class="aside">

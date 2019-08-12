@@ -77,7 +77,7 @@
                               <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ url('home/profile') }}">{{ __('Mi perfil') }}</a>
+                              <a class="nav-link" href="{{ url('profile') }}">{{ __('Mi perfil') }}</a>
                             </li>
                           </ul>
                           <ul>

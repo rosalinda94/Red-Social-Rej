@@ -1,15 +1,18 @@
  <article class="publicacion">
       <ul>
-      	<!-- pasar solo estooo -->
-			@forelse($posts as $post)
-			<article class="publicacion">
-			    <div class="">
+        <!-- pasar solo estooo -->
+
+      @forelse($posts as $post)
+      
+      @if (auth()->id()==$post->user_id)
+      <article class="publicacion">
+          <div class="">
 
 
               <a class="profile-picture" href="profile/profile"><img src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="" width="50px"></a>
 
 
-			        <b>{{$post->user->name}}</b><br>
+              <b>{{$post->user->name}}</b><br>
               @isset($post->group)
               <p>Este post pertenece a la categoria :<b> {{$post->group->name}}</b></p>
 
@@ -20,7 +23,7 @@
 
               <img src="/storage/{{$post->image}}"  alt="" width="300px" height="300px">
               <br> <br>
-			        </div>
+              </div>
                 <div id='publicacion-user' class="publicacion-user">
                   <div class="botones">
                     <a id='like-button' class='like-button' href="#"><i class="far fa-thumbs-up"> Me gusta</i></a>
@@ -61,15 +64,15 @@
                  </form>
               </div>
 
-			        </div>
-			      </article>
-
-			@empty
-			<li><br>No existen posteos </b><img src="/img/triste.jpg" width="150px"></li>
-			@endforelse
-		<!-- pasar solo estooo -->
+              </div>
+            </article>
+ @endif
+      @empty
+      <li><br>No existen posteos </b><img src="/img/triste.jpg" width="150px"></li>
+      @endforelse
+    <!-- pasar solo estooo -->
 </ul>
 
       {{ $posts->appends(request()->query())->links() }}
-
+      
        </article>
