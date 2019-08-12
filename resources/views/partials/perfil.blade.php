@@ -46,10 +46,11 @@
 
 
 
+                  
                   @forelse($comments as $comment)
                   @if ($post->id == $comment->post_id)
-                 <b>{{$post->user->name }}</b>
-                <p>{{$comment->body }}</p>
+                  <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="storage\{{ $comment->user->person->avatar }}"  alt="" width="50px"></a>
+                 <b>{{$comment->user->name }}</b> <p>Comento: {{$comment->body }}</p>
               @endif
 
 
@@ -57,11 +58,12 @@
                 @endforelse
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
+              
                 <form action="comment/create" method="POST">
 
                    {{ csrf_field() }}
 
-                   <input type="hidden" value='1' name="postId">
+                   <input type="hidden" value="<?= $post->id ?>" name="postId">
                     <input type="text" class="" id="bodyComentarios" name="body" placeholder="Deja acá tu comentario">
                  </form>
               </div>

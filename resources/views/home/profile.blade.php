@@ -23,6 +23,7 @@
 <section class="datosUsuario">
   <!-- Esto es para registrar los datos adicionales -->
 <article class="infoGeneral">
+
     <h4>Datos Adicionales</h4>
    @include('partials.register')
 </article>
@@ -31,7 +32,6 @@
 <article class="fotosUsuario">
   <img src="storage\{{ Auth::user()->person->avatar }}" alt="" width="100px">
 </article>
-
 </section>
 
   <!-- Esto es para agregar posts -->

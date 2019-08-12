@@ -32,6 +32,8 @@ class AdditionalController extends Controller
        $additional = Additional::create([
         'status' => $data['status'],
         'city' => $data['city'],
+        'mobileNumber' => $data['mobileNumber'],
+        'date' => $data['date'],
         'user_id' => Auth::id(),
       ]);
         return redirect('/profile');

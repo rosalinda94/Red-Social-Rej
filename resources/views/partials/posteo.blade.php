@@ -14,7 +14,7 @@
  <div class="que-publicar">
    <div class="subiFoto">
      <label for="avatar" class="labelAvatar">{{ __('Compartí tus imagenes') }}</label>
-         <input style='display:none' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
+         <input style='display:none' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}"  autocomplete="avatar" autofocus>
 
          @error('avatar')
              <span class="invalid-feedback" role="alert">
