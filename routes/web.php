@@ -32,6 +32,9 @@ Route::post('/comment/create', 'CommentsController@create');
 
 Route::get('/filtrarCategoria', 'PostController@filter');
 
+Route::get('/filtrarNotificacion', 'PostController@notificacion');
+Route::get('/labels', 'PostController@etiqueta');
+
 
 Route::get('/reaction_type', 'ReactionTypeController@reactionType');
 
@@ -41,9 +44,11 @@ Route::get('/group', 'GroupController@index');
 
 
 Route::post('/index', 'PostController@create');
+
 Route::get('/index', 'PostController@index');
 
 Route::get('/profile', 'PostController@show');
+
 
 Route::post('/profile/create', 'AdditionalController@create');
 

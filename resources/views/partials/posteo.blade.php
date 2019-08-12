@@ -7,7 +7,7 @@
     @csrf
 
  <div class="que-pensas">
-   <a class="cuadrado2" href="profile/profile"><img id="fotoPerfil2" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt=""></a>
+   <a class="cuadrado2" href="profile"><img id="fotoPerfil2" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt=""></a>
    <textarea name="body" rows="1" cols="60" class="comentario" placeholder="{{Auth::user()->name }}, qué queres escribir hoy?"></textarea>
  </div>
 

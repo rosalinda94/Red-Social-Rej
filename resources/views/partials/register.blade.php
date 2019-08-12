@@ -1,12 +1,14 @@
   @forelse($additionals as $additional)
-      
+   
       @if (auth()->id()==$additional->user_id && $additional->status!='')
-  <li>Situación sentimental: {{$additional->status}}</li>
+  <li>Situación sentimental: {{$additional->status}} </li>
+
        <li>Ciudad: {{$additional->city}}</li>
   @endif
 
     
       @empty 
+
       <form action="profile/create" method="POST">
 
     {{ csrf_field() }}
@@ -31,6 +33,12 @@
       <option name="status" required value="Divorciada">Divorciada</option>
 
     </select>
+    <div class="col-md-6">
+       <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"  autocomple>
+    </div>
+     <div class="col-md-6">
+       <input id="date" type="date" class="form-control" name="date" value="{{ old('date') }}"  autocomple>
+    </div>
   </div>
       <button type="submit">Enviar</button>
   </form>     

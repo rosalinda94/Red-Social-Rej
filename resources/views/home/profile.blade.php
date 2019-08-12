@@ -5,6 +5,7 @@
 @endpush
 
 @section('content')
+<!-- Esto es la portada  -->
   <div class="perfilLogueado">
 <section class="portadaUsuario">
 <div class="infoUsuario">
@@ -20,20 +21,27 @@
 </section>
 
 <section class="datosUsuario">
+  <!-- Esto es para registrar los datos adicionales -->
 <article class="infoGeneral">
+    <h4>Datos Adicionales</h4>
    @include('partials.register')
 </article>
+
+  <!-- Esto es para mostrar la imagen abajo -->
 <article class="fotosUsuario">
   <img src="storage\{{ Auth::user()->person->avatar }}" alt="" width="100px">
 </article>
 
 </section>
+
+  <!-- Esto es para agregar posts -->
 <section class="posteosUsuario">
 <article class="posteos">
-
       @include('partials.posteo')
-
 </article>
+
+
+  <!-- Esto es para ver los posts -->
 <article class="posteos">
       @include('partials.perfil')
 </article>

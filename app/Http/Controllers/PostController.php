@@ -41,8 +41,34 @@ class PostController extends Controller
         $posts= Post::where('group_id', '=', $data['id'])->latest()->paginate(10);
         $users= User::all();
         $groups= Group::all();
+        $comments= comment::all();
 
-      return view('home.index', compact('posts', 'users','groups'));
+      return view('home.index', compact('posts', 'users','groups','comments'));
+    }
+
+
+    public function notificacion(Request $data)
+    {
+        $posts= Post::where('id', '=', $data['id'])->latest()->paginate(10);
+        $users= User::all();
+        $additionals= Additional::all();
+        $groups= Group::all();
+        $comments= comment::all();
+
+
+      return view('home.labels', compact('posts', 'users','groups','comments','additionals'));
+    }
+
+    public function etiqueta(Request $data)
+    {
+        $posts= Post::where('etiqueta_id', '=',Auth::id())->latest()->paginate(10);
+        $users= User::all();
+        $additionals= Additional::all();
+        $groups= Group::all();
+        $comments= comment::all();
+
+
+      return view('home.labels', compact('posts', 'users','groups','comments','additionals'));
     }
 
     /**
