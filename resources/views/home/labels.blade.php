@@ -6,8 +6,13 @@
 
 @section('content')
 <!-- Esto es la portada  -->
-  <div class="perfilLogueado"><section class="portadaUsuario" 
+  <div class="perfilLogueado">
+  	    @if (Auth::user()->additional && Auth::user()->additional->image)
+<section class="portadaUsuario" 
 style="background-image: url('{{ Storage::url(Auth::user()->additional->image) }}')">
+@else
+<section class="portadaUsuario" >
+  @endif
 <div class="infoUsuario">
   <div class="cuadrado4">
     <img id="fotoPerfil4" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="">

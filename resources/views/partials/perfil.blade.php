@@ -31,30 +31,9 @@
               <br> <br>
 
                 <div id='publicacion-user' class="publicacion-user">
-
-<<<<<<< HEAD
-
-                  <div class="botones">
-                   @include('partials.like')
-
-                    <a id='share-button' class='share-button' href="#"><i class="fas fa-share"></i>Compartir</a>
+             @include('partials.like')
 
 
-                  </div>
-                  <div id='interaccion' class="interaccion">
-                    <!-- Aca va la informacion sobre la interaccion del usuario con el posteo -->
-                    <br>
-                    <i class="compartido"><?=
-                    $numero_aleatorio = rand(1,5) . ' veces compartidos'; ?></i>
-                  </div>
-                </div>
-
-               @include('partials.like')
-
-=======
-               @include('partials.like')
-                  
->>>>>>> 951ef31e318417300801f3c8dfcab7da942de40a
                @include('partials.comment')
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
@@ -79,9 +58,6 @@
 
       {{ $posts->appends(request()->query())->links() }}
 
-<<<<<<< HEAD
       <script src="{{ asset('js/home.js') }}" defer></script>
-=======
-<script src="{{ asset('js/profile.js') }}" defer></script>
->>>>>>> 951ef31e318417300801f3c8dfcab7da942de40a
+
        </article>

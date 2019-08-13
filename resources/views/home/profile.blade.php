@@ -8,8 +8,12 @@
 
 <!-- Esto es la portada  -->
   <div class="perfilLogueado">
+    @if (Auth::user()->additional && Auth::user()->additional->image)
 <section class="portadaUsuario" 
 style="background-image: url('{{ Storage::url(Auth::user()->additional->image) }}')">
+@else
+<section class="portadaUsuario" >
+  @endif
 <div class="infoUsuario">
   <div class="cuadrado3">
     <img id="fotoPerfil3" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="">
@@ -17,7 +21,8 @@ style="background-image: url('{{ Storage::url(Auth::user()->additional->image) }
   <h3 class="user-name">{{Auth::user()->person->name }} {{Auth::user()->person->lastName }}</h3>
 </div>
 
- @if (Auth::user()->additional->image)
+  @if (Auth::user()->additional && Auth::user()->additional->image)
+
 
   <form class="fotoPortada" action="/profile/portada" method="post" enctype="multipart/form-data">
     @csrf

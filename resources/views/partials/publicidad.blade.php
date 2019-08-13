@@ -8,8 +8,6 @@
       <img src="{{asset('/img/publicidad1.jpg')}}" class="d-block w-100" alt="...">
     </div>
 </div>
-<<<<<<< HEAD
-=======
 </div>
 </div>
 
@@ -36,4 +34,3 @@
     </div>
 </div>
 </div>
->>>>>>> 951ef31e318417300801f3c8dfcab7da942de40a
