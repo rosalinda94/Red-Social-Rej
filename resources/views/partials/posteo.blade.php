@@ -3,12 +3,12 @@
   @endpush
 
 <article class="publicar">
-  <form class="" action="index" method="post" enctype="multipart/form-data">
+  <form class="" id="formularioPosteo" action="index" method="post" enctype="multipart/form-data">
     @csrf
 
  <div class="que-pensas">
    <a class="cuadrado2" href="profile"><img id="fotoPerfil2" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt=""></a>
-   <textarea name="body" rows="1" cols="60" class="comentario" placeholder="{{Auth::user()->name }}, qué queres escribir hoy?"></textarea>
+   <textarea name="body" id="publicacion" rows="1" cols="60" class="comentario" placeholder="{{Auth::user()->name }}, qué queres escribir hoy?"></textarea>
  </div>
 
  <div class="que-publicar">
@@ -34,7 +34,7 @@
    </select>
    </div>
    <div class="actividad">
-   <select id="actividad" name="actividad" >
+   <select id="actividad" value='' name="actividad" >
      <option disabled selected>Actividad deportiva  </option>
 
         @forelse($groups as $group)
