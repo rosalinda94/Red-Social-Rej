@@ -2,10 +2,10 @@
 @push('styles')
   <link href="{{ asset('css/home.css') }}" rel="stylesheet">
   <link href="{{ asset('css/logged/grupos.css') }}" rel="stylesheet">
-  
+
 @endpush
 @section('content')
-  <body class="body">
+  <div class="body">
 
     @include('home.loading')
 
@@ -45,6 +45,6 @@
       </article>
     </section>
     </div>
-  </body>
+  </div>
 
 @endsection

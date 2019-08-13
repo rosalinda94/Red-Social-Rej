@@ -108,3 +108,17 @@
 .fa-check{
   color: #ececec;
 }
+
+
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+
+  .principal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  }
+
+  #fotoPerfil4{
+    display: none;
+  }
