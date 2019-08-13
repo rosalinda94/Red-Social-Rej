@@ -115,6 +115,16 @@ margin-top: 0;
 .fa-trash-alt:hover{
   color: #b58ec0;
 }
+/* eliminar comentarios */
+
+ #eliminado {
+padding: 15px;
+
+}
+
+#tacho{
+  font-size: 12px;
+}
 
 /* comentarios del posteo */
 
@@ -128,6 +138,61 @@ padding: 10px;
 background-color: #ececec;
 }
 
+#fotoPerfil6 {
+  object-fit: cover;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 10px;
+}
+
+.userName2{
+  font-family: 'oswald', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin:0;
+}
+
+.totalComentario{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.comentarioX{
+  background-color:#ececec;
+  padding: 15px;
+  width: 100%;
+}
+
+.queComento{
+  margin: 0;
+  font-family: 'roboto', sans-serif;
+  font-weight: 300;
+}
+
 .form-row{
   border-bottom: 1px solid #ececec;
+}
+
+/* no hay posteos */
+
+.noPost{
+  font-family:'oswald', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  color: #575756;
+  text-transform: uppercase;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  height: 50px;
+}
+
+.fa-sad-cry{
+  margin-left: 20px;
+  font-size: 25px;
 }

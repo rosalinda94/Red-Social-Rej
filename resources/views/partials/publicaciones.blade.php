@@ -48,8 +48,20 @@
 
                   @forelse($comments as $comment)
                   @if ($post->id == $comment->post_id)
-                  <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="storage\{{ $comment->user->person->avatar }}"  alt="" width="50px"></a>
-                 <b>{{$comment->user->name }}</b> <p>Comento: {{$comment->body }}</p>
+                    <div class="totalComentario">
+                      <a class="cuadrado5" href="profile"><img id="fotoPerfil6"  src="storage\{{ $comment->user->person->avatar }}"  alt=""></a>
+                      <div class="comentarioX">
+                        <b class="userName2">{{$comment->user->name }}</b>
+                        <p class="queComento">{{$comment->body }}</p>
+                      </div>
+                      @if (auth()->id()==$comment->user_id)
+                        <form class="eliminar" id="eliminado" action="{{URL::to('/')}}/post/{{ $comment->id }}" method="POST">
+                           {{ csrf_field() }}
+                           {{ method_field('DELETE') }}
+                           <button id="eliminar" type="submit"><i id="tacho" class="fas fa-trash-alt"></i></button>
+                         </form>
+                      @endif
+                    </div>
               @endif
 
 
@@ -70,7 +82,7 @@
 			      </article>
 
 			@empty
-			<li><br>No existen posteos </b><img src="/img/triste.jpg" width="150px"></li>
+			<li class="noPost">No existen posteos </b><i class="fas fa-sad-cry"></i></li>
 			@endforelse
 		<!-- pasar solo estooo -->
 </ul>

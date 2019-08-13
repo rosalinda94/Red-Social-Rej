@@ -39,3 +39,8 @@
 #notificaciones:hover{
   color: #bf8fd8;
 }
+
+/* -------------------------  FIN Header & Footer ------------------------- */
+
+  /* ------ comienzo responsive ------ */
+  @media(max-width:736px) {

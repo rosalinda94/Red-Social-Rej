@@ -41,7 +41,7 @@
 /* subir archivo */
 .labelAvatar{
     display: flex;
-    background: transparent;
+    background-color: transparent;
     color:#575756;
     font-family:'oswald', sans-serif;
     font-size: 14px;
@@ -56,7 +56,8 @@
 .etiqueta:hover,
 .actividad:hover,
 #etiqueta:hover,
-#actividad:hover{
+#actividad:hover,
+.subiFoto:hover{
   background-color: #575756;
   color: #ececec;
 }

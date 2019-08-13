@@ -3,7 +3,7 @@
 @endpush
 
  <article class="publicacion">
-      <ul>
+      <ul class="publicaciones">
         <!-- pasar solo estooo -->
       @forelse($posts as $post)
       @if (auth()->id()==$post->user_id)
@@ -46,7 +46,7 @@
 
 
 
-                  
+
                   @forelse($comments as $comment)
                   @if ($post->id == $comment->post_id)
                   <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="storage\{{ $comment->user->person->avatar }}"  alt="" width="50px"></a>
@@ -58,7 +58,7 @@
                 @endforelse
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
-              
+
                 <form action="comment/create" method="POST">
 
                    {{ csrf_field() }}
@@ -72,7 +72,7 @@
             </article>
 @endif
       @empty
-      <li><br>No existen posteos </b><img src="/img/triste.jpg" width="150px"></li>
+      <li class="noPost">No existen posteos </b><i class="fas fa-sad-cry"></i></li>
       @endforelse
     <!-- pasar solo estooo -->
 </ul>

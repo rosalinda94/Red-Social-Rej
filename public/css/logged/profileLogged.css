@@ -101,3 +101,32 @@ height: 900px;
   margin: 12px;
   margin-top: 20px;
 }
+
+/* comentarios */
+
+
+
+/* no hay posteos */
+
+.publicaciones .noPost {
+  padding-inline-start: 0;
+}
+
+.noPost{
+  font-family:'oswald', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  color: #575756;
+  text-transform: uppercase;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  height: 50px;
+}
+
+.fa-sad-cry{
+  margin-left: 20px;
+  font-size: 25px;
+}

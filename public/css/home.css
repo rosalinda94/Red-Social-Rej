@@ -3,7 +3,7 @@
 *{
   margin: 0;
   padding: 0;
-  color: #575756;
+  /* color: #575756; */
   }
 
 
@@ -101,3 +101,21 @@ i {
   width: 0;
   position: relative;
 } */
+
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+
+  .py-4{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-logueado{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+
+
+}
