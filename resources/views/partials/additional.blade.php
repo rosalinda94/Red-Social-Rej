@@ -1,16 +1,11 @@
 
-  @forelse($additionals as $additional)
-
-        @if(auth()->id()==$additional->user_id && $additional->mobileNumber!='')
-
-       <li>Situación sentimental: {{$additional->status}} </li>
-       <li>Ciudad: {{$additional->city}}</li>
-       <li>Telefono: {{$additional->mobileNumber}} </li>
-       <li>Fecha de Nacimiento: {{$additional->date}}</li>
-
- @endif
-      @empty
-
+<!--    @if($additional->status)
+         <li>Situación sentimental: {{$additional->status}} </li>
+         <li>Ciudad: {{$additional->city}}</li>
+         <li>Telefono: {{$additional->mobileNumber}} </li>
+         <li>Fecha de Nacimiento: {{$additional->date}}</li>
+      @else
+ -->
 
 
       <form action="profile/create" method="get">
@@ -47,5 +42,5 @@
        <input id="date" type="date" required class="form-control" name="date"   autocomple>
     </div>
       <button  id='submit' type="submit" class="botonPublicar" style="width: 100%" >Enviar</button>
-  </form>
-      @endforelse
+  </form><!-- 
+      @endif -->
