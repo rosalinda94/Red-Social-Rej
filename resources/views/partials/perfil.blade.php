@@ -32,9 +32,9 @@
 
                 <div id='publicacion-user' class="publicacion-user">
 
-                  <div class="botones">   
+                  <div class="botones">
                    @include('partials.like')
-                  
+
                     <a id='share-button' class='share-button' href="#"><i class="fas fa-share"></i>Compartir</a>
 
 
@@ -70,4 +70,5 @@
 
       {{ $posts->appends(request()->query())->links() }}
 
+<script src="{{ asset('js/profile.js') }}" defer></script>  
        </article>

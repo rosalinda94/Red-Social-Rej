@@ -17,8 +17,8 @@
 
 
   <form class="fotoPortada" action="index" method="post" enctype="multipart/form-data">
-    <label for="avatar" class="labelAvatar">{{ __('Foto de portada') }}</label>
-    <input style='display: none;' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
+    <label  for="avatar" class="labelAvatar">{{ __('Foto de portada') }}</label>
+    <input id='avatar' style='display: none;' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
   </form>
 </section>
 
@@ -54,5 +54,6 @@
       @include('partials.perfil')
 </article>
 </section>
+<script src="{{ asset('js/profile.js') }}" defer></script>
   </div>
 @endsection
