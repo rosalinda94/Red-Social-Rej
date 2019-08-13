@@ -7,14 +7,16 @@ window.onload=function(){
   let campoEmail = document.getElementById('email');
   let campoPassword = document.getElementById('password');
   let campoPasswordConfirm = document.getElementById('password-confirm');
-  let btn = document.getElementById('submit');
+  let campoAvatar = document.getElementById('avatar');
 
   var emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 
-
   campoName.addEventListener('keyup', function (){
-    if( this.value.length < 3 || this.value.length >10){
+    if(this.value == ' '){
+      alert('No se pueden ingresar espacios vacios');
+    }
+    if( this.value.length < 3 || this.value.length > 10){
       this.style.borderColor = 'red';
     }else{
       this.style.borderColor = 'violet';
@@ -22,6 +24,9 @@ window.onload=function(){
   })
 
   lastName.addEventListener('keyup', function (){
+    if(this.value == ' '){
+      alert('No se pueden ingresar espacios vacios');
+    }
     if(this.value.length < 3 || this.value.length >10){
       this.style.borderColor = 'red';
     }else{
@@ -30,10 +35,18 @@ window.onload=function(){
   })
 
   campoPartner.addEventListener('keyup', function (){
-    if(parseInt(campoPartner.value) != true){
+    if(this.value == ' '){
+      alert('No se pueden ingresar espacios vacios');
+    }
+
+    if(isNaN(campoPartner.value) != false){    //Controlar esto
       this.style.borderColor = 'red';
-    } else {
+
+    } else if (campoPartner.value.length >=1){
       this.style.borderColor = 'violet';
+    }
+    if(this.value.length >10){
+      this.style.borderColor = 'red';
     }
   })
 
@@ -56,6 +69,9 @@ window.onload=function(){
   })
 
   campoPassword.addEventListener('keyup', function (){
+    if(this.value == ' '){
+      alert('No se pueden ingresar espacios vacios');
+    }
     if(this.value.trim() == ''){
       this.style.borderColor = 'red';
     }
@@ -67,6 +83,9 @@ window.onload=function(){
   })
 
   campoPasswordConfirm.addEventListener('keyup', function (){
+    if(this.value == ' '){
+      alert('No se pueden ingresar espacios vacios');
+    }
     if(this.value.trim() == ''){
       this.style.borderColor = 'red';
     }
@@ -77,6 +96,13 @@ window.onload=function(){
     }
   })
 
+  campoAvatar.addEventListener("change", function(){
+    var extensiones = /(.jpg|.jpeg|.png)$/i;
+    if(!extensiones.exec(campoAvatar.value)){
+      alert('Se aceptan las siguientes extensiones: .jpg, .jpeg, .png');
+      campoAvatar.value='';
+    }
+  })
 
 
   var validarNombre = function(event){
@@ -108,16 +134,16 @@ window.onload=function(){
       alert('El campo Nro de Socio no puede estar vacio');
       event.preventDefault();
       campoPartner.style.borderColor= 'red';
-    } else if (parseInt(campoPartner.value) != true) {
+    } else if (parseInt(campoPartner.value)!= true) {
         alert('El campo Nro de Socio debe ser un número');
         event.preventDefault();
         campoPartner.style.borderColor= 'red';
     }
   }
 
-      var validarSelect = function(event){  //chequear esto
+      var validarSelect = function(event){
         if(campoSex.value != 0 && campoSex.value !=1){
-          alert('Seleccione una opcion');
+          alert('Indique su genero');
           event.preventDefault();
           campoSex.style.borderColor='red';
         }
@@ -131,13 +157,14 @@ window.onload=function(){
         }
       }
 
-      var validarPassword = function(event){  //chequear esto
+      var validarPassword = function(event){
         if (campoPassword.value.trim() == '' || campoPasswordConfirm.value.trim() == '') {
           alert("Ninguna de las Contraseñas pueden quedar vacias");
           event.preventDefault();
           campoPassword.style.borderColor='red';
           campoPasswordConfirm.style.borderColor= 'red';
         }
+
         if(campoPassword.value != campoPasswordConfirm.value ){
           alert('Las Contraseñas no coinciden');
           event.preventDefault();
@@ -146,6 +173,12 @@ window.onload=function(){
         }
       }
 
+      var validarAvatar = function(event){
+        if (campoAvatar.value == '') {
+          alert("Adjunte una imagen como su Avatar");
+          event.preventDefault();
+        }
+      }
 
 
   var validar = function(event){
@@ -155,6 +188,7 @@ window.onload=function(){
     validarSelect(event);
     validarEmail(event);
     validarPassword(event);
+    validarAvatar(event);
   };
 
   formRegister.addEventListener('submit',validar);
