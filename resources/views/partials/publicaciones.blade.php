@@ -20,7 +20,8 @@
               <div class="quienPublicaInfo">
                 <h4 class="userName" >{{$post->user->name}}</h4>
                 @isset($post->group)
-                <p>Este post pertenece a la categoria :<b> {{$post->group->name}}</b></p>
+                <p>Este post pertenece a la categoria : <br class="enter">
+                <b> {{$post->group->name}}</b></p>
                 @endisset
               </div>
             </div>
@@ -32,9 +33,9 @@
 
                 <div id='publicacion-user' class="publicacion-user">
                   <div class="botones">
-                    <a id='like-button' class='like-button' href="#"><i class="fas fa-thumbs-up"></i>Me gusta</a>
-                    <a id='dislike-button' class='dislike-button' href="#"><i class="fas fa-thumbs-down"></i>No me gusta</a>
-                    <a id='share-button' class='share-button' href="#"><i class="fas fa-share"></i>Compartir</a>
+                    <a id='like-button' class='like-button' href="#"><i class="fas fa-thumbs-up"></i><span class="likes">Me gusta</span></a>
+                    <a id='dislike-button' class='dislike-button' href="#"><i class="fas fa-thumbs-down"></i><span class="likes">No me gusta</span></a>
+                    <a id='share-button' class='share-button' href="#"><i class="fas fa-share"></i><span class="likes">compartir</span></a>
                   </div>
                   <div id='interaccion' class="interaccion">
                     <!-- Aca va la informacion sobre la interaccion del usuario con el posteo -->

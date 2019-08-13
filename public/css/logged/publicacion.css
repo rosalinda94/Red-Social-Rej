@@ -99,10 +99,12 @@ padding: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+
 }
 
 #eliminar {
     border: none;
+    background: #fff;
 }
 
 article .publicacion{
@@ -118,12 +120,13 @@ margin-top: 0;
 /* eliminar comentarios */
 
  #eliminado {
-padding: 15px;
-
-}
+  padding: 15px;
+  background: #fff;
+  border: none;
+  }
 
 #tacho{
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* comentarios del posteo */
@@ -196,3 +199,34 @@ background-color: #ececec;
   margin-left: 20px;
   font-size: 25px;
 }
+
+
+
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+
+
+  .enter{
+    display: flex;
+  }
+
+  .likes{
+    display: none;
+  }
+
+  .like-button,
+  .dislike-button,
+  .share-button{
+    width: 50px;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .botones{
+   justify-content: center;
+  }
+
+  .comentarioX{
+    width: 67%;
+  }
