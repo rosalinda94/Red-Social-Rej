@@ -25,4 +25,12 @@ class CommentsController extends Controller
         return redirect('/index');
 
     }
+
+    public function destroy($id) 
+    {
+      $result = Comment::find($id);
+      $result->delete();
+
+      return redirect('/index');
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\User;
 use App\group;
+use App\like;
 use App\comment;
 use App\Additional;
 use Illuminate\Http\Request;
@@ -30,9 +31,10 @@ class PostController extends Controller
         $additionals= Additional::all();
         $groups= Group::all();
         $comments= comment::all();
+        $likes= like::all();
 
 
-        return view('home.index', compact('posts', 'users','groups','comments','additionals'));
+        return view('home.index', compact('posts', 'users','groups','comments','additionals','likes'));
 
     }
 
@@ -147,8 +149,8 @@ class PostController extends Controller
         $groups= Group::all();
         $comments= comment::all();        
         $additionals= Additional::all();
-
-        return view('home.profile', compact('posts', 'users','groups','comments','additionals'));
+        $likes= like::all();
+        return view('home.profile', compact('posts', 'users','groups','comments','additionals','likes'));
     }
 
     /**
@@ -190,20 +192,6 @@ class PostController extends Controller
       $result->delete();
 
       return redirect('/index');
-/* public function destroy($id)
-{
-    // buscas el padre
-    $result = Producto::find($id);
-
-    // buscas el hijo y lo borras
-    $resultImagen = Imagen::find($result->id_producto);
-    $resultImagen->delete();
-
-    // borrar el padre
-    $result->delete();
-
-    return redirect('/productos')->with('success', 'Stock has been deleted Successfully');
-}*/
     }
 
 }
