@@ -113,7 +113,7 @@ class PostController extends Controller
             
 
        
-        return redirect('/index');
+        return back();
 
     }
 
@@ -186,12 +186,12 @@ class PostController extends Controller
 
     public function destroy($id) {
       
-      $result = Post::find($id);
-      $Comment = Comment::where('post_id', '=',$id);
-      $Comment->delete();
-      $result->delete();
+      Comment::where('post_id', '=',$id)->delete();
+      Like::where('post_id', '=',$id)->delete();
+      Post::find($id)->delete();
+    
 
-      return redirect('/index');
+       return back();
     }
 
 }

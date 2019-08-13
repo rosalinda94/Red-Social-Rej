@@ -33,7 +33,10 @@
 
   <!-- Esto es para mostrar la imagen abajo -->
 <article class="fotosUsuario">
-  <img src="storage\{{ Auth::user()->person->avatar }}" alt="" width="100px">
+  @foreach($posts as $post)
+  <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="" width="50px" height="10px">
+
+   @endforeach
 </article>
 </section>
 
