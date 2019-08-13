@@ -17,13 +17,22 @@ style="background-image: url('{{ Storage::url(Auth::user()->additional->image) }
   <h3 class="user-name">{{Auth::user()->person->name }} {{Auth::user()->person->lastName }}</h3>
 </div>
 
+ @if (Auth::user()->additional->image)
 
   <form class="fotoPortada" action="/profile/portada" method="post" enctype="multipart/form-data">
     @csrf
     <label for="portada" class="labelAvatar">{{ __('Foto de portada') }}</label>
     <input style='display: none;' id="portada" type="file" accept="image/*" name="portada" value="{{ old('portada') }}" required autocomplete="portada" autofocus>
-    <button>Enviar</button>
+    <button>Cambiar imagen</button>
   </form> 
+  @else
+    <form class="fotoPortada" action="/profile/portada" method="post" enctype="multipart/form-data">
+    @csrf
+    <label for="portada" class="labelAvatar">{{ __('Foto de portada') }}</label>
+    <input style='display: none;' id="portada" type="file" accept="image/*" name="portada" value="{{ old('portada') }}" required autocomplete="portada" autofocus>
+    <button>Enviar</button>
+
+  @endif
 
 </section>
 
