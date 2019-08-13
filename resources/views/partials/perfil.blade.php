@@ -32,6 +32,7 @@
 
                 <div id='publicacion-user' class="publicacion-user">
 
+<<<<<<< HEAD
                   <div class="botones">
                    @include('partials.like')
 
@@ -46,6 +47,10 @@
                     $numero_aleatorio = rand(1,5) . ' veces compartidos'; ?></i>
                   </div>
                 </div>
+=======
+               @include('partials.like')
+                  
+>>>>>>> 5aa40141813242497b8a52427f2c72c040862e07
                @include('partials.comment')
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">

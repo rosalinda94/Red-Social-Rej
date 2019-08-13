@@ -143,7 +143,7 @@ class PostController extends Controller
      */
     public function show()
     {
-        $posts= Post::latest()->paginate(10);
+        $posts= Post::with('group', 'user')->latest()->paginate(10);
         $users= User::all();
         $groups= Group::all();
         $comments= comment::all();

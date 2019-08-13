@@ -7,7 +7,7 @@
 @section('content')
 <!-- Esto es la portada  -->
   <div class="perfilLogueado">
-<section class="portadaUsuario">
+<section class="portadaUsuario" style="background-image: url('{{ Storage::url(Auth::user()->person->avatar) }}')">
 <div class="infoUsuario">
   <div class="cuadrado3">
     <img id="fotoPerfil3" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="">
@@ -27,7 +27,7 @@
 <article class="infoGeneral">
 
     <h4>Datos Adicionales</h4>
-   @include('partials.register')
+   @include('partials.additional')
 
 </article>
 
@@ -40,6 +40,7 @@
   @endif
    @endforeach
 </article>
+
 </section>
 
   <!-- Esto es para agregar posts -->
