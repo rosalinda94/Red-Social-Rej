@@ -22,7 +22,7 @@ class CommentsController extends Controller
         'post_id' =>  $data['postId'],
         'user_id' => Auth::user()->id,
       ]);
-        return redirect('/index');
+        return back();
 
     }
 
@@ -31,6 +31,6 @@ class CommentsController extends Controller
       $result = Comment::find($id);
       $result->delete();
 
-      return redirect('/index');
+      return back();
     }
 }

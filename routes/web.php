@@ -19,10 +19,6 @@ Route::get('/welcome', function () {
     return view('home.index');
 });
 
-Route::get('/profile', function () {
-    return view('home.profile');
-});
-
 Route::post('/post/{id}/like', 'LikeController@create');
 Route::delete('/post/{id}/like', 'LikeController@destroy');
 

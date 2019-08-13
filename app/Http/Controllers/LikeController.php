@@ -19,7 +19,7 @@ class LikeController extends Controller
     public function index()
     {
 
-     }
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +30,7 @@ class LikeController extends Controller
     {
         auth()->user()->like()->create([
             'post_id' => $id
-        ]);          
+        ]);
 
         return back();
     }

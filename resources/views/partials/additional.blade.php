@@ -1,8 +1,8 @@
 
   @forelse($additionals as $additional)
-   
+  
+        @if(auth()->id()==$additional->user_id && $additional->mobileNumber!='')
 
-      @if(auth()->id()==$additional->user_id && $additional->mobileNumber!='')
        <li>Situación sentimental: {{$additional->status}} </li>
        <li>Ciudad: {{$additional->city}}</li>
        <li>Telefono: {{$additional->mobileNumber}} </li>

@@ -27,7 +27,7 @@
 <article class="infoGeneral">
 
     <h4>Datos Adicionales</h4>
-   @include('partials.register')
+   @include('partials.additional')
 
 </article>
 
