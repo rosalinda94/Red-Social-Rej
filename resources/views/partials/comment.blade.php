@@ -10,8 +10,9 @@
       <form class="eliminar" action="{{URL::to('/')}}/comment/{{ $comment->id }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
-        <button id="eliminado" type="submit"><i id="tacho" class="fas fa-trash-alt"></i></button>
+        <button id="eliminarComentario" type="submit"><i id="tacho" class="fas fa-trash-alt"></i></button>
       </form>
+      <script src="{{ asset('js/home.js') }}" defer></script>
     @endif
       </div>
   @endif

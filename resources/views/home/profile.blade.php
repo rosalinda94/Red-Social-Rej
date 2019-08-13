@@ -5,9 +5,11 @@
 @endpush
 
 @section('content')
+
 <!-- Esto es la portada  -->
   <div class="perfilLogueado">
-<section class="portadaUsuario" style="background-image: url('{{ Storage::url(Auth::user()->person->avatar) }}')">
+<section class="portadaUsuario" 
+style="background-image: url('{{ Storage::url(Auth::user()->additional->image) }}')">
 <div class="infoUsuario">
   <div class="cuadrado3">
     <img id="fotoPerfil3" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="">
@@ -16,12 +18,16 @@
 </div>
 
 
-  <form class="fotoPortada" action="index" method="post" enctype="multipart/form-data">
-    <label for="avatar" class="labelAvatar">{{ __('Foto de portada') }}</label>
-    <input style='display: none;' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
+  <form class="fotoPortada" action="/profile/portada" method="post" enctype="multipart/form-data">
+    @csrf
+    <label for="portada" class="labelAvatar">{{ __('Foto de portada') }}</label>
+    <input style='display: none;' id="portada" type="file" accept="image/*" name="portada" value="{{ old('portada') }}" required autocomplete="portada" autofocus>
     <button>Enviar</button>
   </form> 
+
 </section>
+
+<div class="todoUsuario">
 
 <section class="datosUsuario">
   <!-- Esto es para registrar los datos adicionales -->
@@ -34,12 +40,15 @@
 
   <!-- Esto es para mostrar la imagen abajo -->
 <article class="fotosUsuario">
-  @foreach($posts as $post)
 
-  @if (auth()->id()==$post->user_id)
-  <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="" width="50px" height="10px">
-  @endif
-   @endforeach
+    @foreach($posts as $post)
+    @if (auth()->id()==$post->user_id)
+      <div class="contenedorFoto">
+    <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="" >
+      </div>
+    @endif
+     @endforeach
+
 </article>
 
 </section>
@@ -56,5 +65,6 @@
       @include('partials.perfil')
 </article>
 </section>
+<script src="{{ asset('js/profile.js') }}" defer></script>
   </div>
 @endsection

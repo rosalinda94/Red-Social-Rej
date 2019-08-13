@@ -99,7 +99,7 @@ class PostController extends Controller
             ]);
 
         }else{
-             $ruta= request()->file('avatar')->store('public');
+            $ruta= request()->file('avatar')->store('public');
             $nombreArchivo= basename($ruta);
 
             $post = Post::create([
@@ -147,9 +147,9 @@ class PostController extends Controller
         $users= User::all();
         $groups= Group::all();
         $comments= comment::all();
-        $additionals= Additional::all();
         $likes= like::all();
-        return view('home.profile', compact('posts', 'users','groups','comments','additionals','likes'));
+        $additional = auth()->user()->additional;
+        return view('home.profile', compact('posts', 'users','groups','comments','additional','likes'));
     }
 
     /**
