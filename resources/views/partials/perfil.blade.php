@@ -58,5 +58,5 @@
 
       {{ $posts->appends(request()->query())->links() }}
 
-<script src="{{ asset('js/profile.js') }}" defer></script>  
+<script src="{{ asset('js/profile.js') }}" defer></script>
        </article>
