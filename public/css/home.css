@@ -13,8 +13,9 @@
 
 .home-logueado {
   display: flex;
-  padding-top: 50px;
+  padding-top: 70px;
   justify-content: space-around;
+  /* height: 100vh; */
 }
 .home-logueado article {
   background-color: #fff;
@@ -102,6 +103,14 @@ i {
   position: relative;
 } */
 
+.tablet{
+  display: none;
+}
+
+.celular{
+  display: none;
+}
+
 /* ------------------------- Inicio Responsive celular --------------------- */
 @media (max-width:1200px){
 
@@ -131,6 +140,14 @@ i {
   height: 65px;
 }
 
+.web {
+  display: none;
+}
+
+.tablet{
+  display: flex;
+  width: 100%;
+}
 
 /* ------------------------- Inicio Responsive celular --------------------- */
 @media (max-width:700px){

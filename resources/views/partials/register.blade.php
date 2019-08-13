@@ -1,10 +1,15 @@
 
-   @if($additional->city!='')
-         <li>Situación sentimental: {{$additional->status}} </li>
-         <li>Ciudad: {{$additional->city}}</li>
-         <li>Telefono: {{$additional->mobileNumber}} </li>
-         <li>Fecha de Nacimiento: {{$additional->date}}</li>
-      @else
+  @forelse($additionals as $additional)
+
+
+      @if(auth()->id()==$additional->user_id && $additional->mobileNumber!='')
+       <li>Situación sentimental: {{$additional->status}} </li>
+       <li>Ciudad: {{$additional->city}}</li>
+       <li>Telefono: {{$additional->mobileNumber}} </li>
+       <li>Fecha de Nacimiento: {{$additional->date}}</li>
+
+ @endif
+      @empty
 
 
 
@@ -43,4 +48,4 @@
     </div>
       <button  id='submit' type="submit" class="botonPublicar" style="width: 100%" >Enviar</button>
   </form>
-      @endif
+      @endforelse

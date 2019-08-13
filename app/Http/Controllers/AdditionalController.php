@@ -29,13 +29,14 @@ class AdditionalController extends Controller
 
     public function create(Request $data)
     {
-       $additional = Additional::create([
+       Additional::create([
         'status' => $data['status'],
         'city' => $data['city'],
         'mobileNumber' => $data['mobileNumber'],
         'date' => $data['date'],
         'user_id' => Auth::id(),
       ]);
+
         return redirect('/profile');
 
     }
@@ -80,9 +81,43 @@ class AdditionalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $data)
+    {   
+        // aca estoy guardando la imagen
+        $ruta= request()->file('portada')->store('public');
+        $nombreArchivo= basename($ruta);
+
+         $post = Additional::create([
+               'image' => $nombreArchivo,
+               'user_id' => Auth::id(),
+            ]);
+
+
+        // auth()->user()->additional()->updateOrCreate([
+        //     'image' => $post
+        // ]);
+
+            /*
+
+
+        //aca busco si existe la imagen
+        $id= auth()->user()->additional()->where('user_id', $id);
+
+        //aca consulto si el id tiene algo hago un update en la base
+        if($id!=''){
+
+
+        
+        }
+        //aca hago que si el id no existe lo creo
+        else{
+            Additional::create([
+               'image' => $nombreArchivo,
+               'user_id' => Auth::id(),
+            ]);
+            
+        }*/
+        return back();
     }
 
     /**

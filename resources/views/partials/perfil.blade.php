@@ -32,6 +32,7 @@
 
                 <div id='publicacion-user' class="publicacion-user">
 
+<<<<<<< HEAD
 
                   <div class="botones">
                    @include('partials.like')
@@ -50,6 +51,10 @@
 
                @include('partials.like')
 
+=======
+               @include('partials.like')
+                  
+>>>>>>> 951ef31e318417300801f3c8dfcab7da942de40a
                @include('partials.comment')
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
@@ -74,5 +79,9 @@
 
       {{ $posts->appends(request()->query())->links() }}
 
+<<<<<<< HEAD
       <script src="{{ asset('js/home.js') }}" defer></script>
+=======
+<script src="{{ asset('js/profile.js') }}" defer></script>
+>>>>>>> 951ef31e318417300801f3c8dfcab7da942de40a
        </article>
