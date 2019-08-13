@@ -13,13 +13,15 @@ window.onload=function(){
     }
   })
 
-  campoEliminar.addEventListener("click", function(){
+  campoEliminar.addEventListener("click", function(e){
     var mensaje = confirm('Desea eleminar la publicacion?');
-    if (mensaje == true){
+
+    if (mensaje){
       alert('Publicacion eliminada');
-    } else{
-      redirect('/index');  // VER ESTO
+    } else {
+      e.preventDefault();
     }
+
   })
 
   var validarPublicacion = function(event){
