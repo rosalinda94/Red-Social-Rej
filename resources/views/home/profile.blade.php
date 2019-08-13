@@ -22,6 +22,8 @@
   </form>
 </section>
 
+<div class="todoUsuario">
+
 <section class="datosUsuario">
   <!-- Esto es para registrar los datos adicionales -->
 <article class="infoGeneral">
@@ -33,12 +35,15 @@
 
   <!-- Esto es para mostrar la imagen abajo -->
 <article class="fotosUsuario">
-  @foreach($posts as $post)
 
-  @if (auth()->id()==$post->user_id)
-  <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="" width="50px" height="10px">
-  @endif
-   @endforeach
+    @foreach($posts as $post)
+    @if (auth()->id()==$post->user_id)
+      <div class="contenedorFoto">
+    <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="" >
+      </div>  
+    @endif
+     @endforeach
+
 </article>
 </section>
 
@@ -54,5 +59,6 @@
       @include('partials.perfil')
 </article>
 </section>
+</div>
   </div>
 @endsection
