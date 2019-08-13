@@ -12,8 +12,8 @@
  </div>
 
  <div class="que-publicar">
-   <div class="subiFoto">
-     <label for="avatar" class="labelAvatar">{{ __('Compartí tus imagenes') }}</label>
+   {{-- <div class="subiFoto"> --}}
+     <label for="avatar" class="labelAvatar"><span class="subirImg">{{ __('Compartí tus imagenes') }}</span><i class="fas fa-image"></i></label>
          <input style='display:none' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}"  autocomplete="avatar" autofocus>
 
          @error('avatar')
@@ -21,9 +21,9 @@
                  <strong>{{ $message }}</strong>
              </span>
          @enderror
-   </div>
+   {{-- </div> --}}
 
-      <div class="etiqueta">
+      {{-- <div class="etiqueta"> --}}
    <select  id="etiqueta" name="etiqueta"  >
      <option disabled selected>Etiquetar a </option>
      @forelse($users as $user)
@@ -32,8 +32,8 @@
    <option>no hay amigos</option>
    @endforelse
    </select>
-   </div>
-   <div class="actividad">
+   {{-- </div> --}}
+   {{-- <div class="actividad"> --}}
    <select id="actividad" value='' name="actividad" >
     <option disabled selected>Actividad deportiva  </option>
         @forelse($groups as $group)
@@ -42,7 +42,7 @@
    <option>No existen actividades deportivas</option>
    @endforelse
    </select>
-    </div>
+    {{-- </div> --}}
    <button type="submit" class="botonPublicar"><i class="fas fa-check"></i></button>
  </div>
 </form>
