@@ -34,10 +34,17 @@
     <div id="app">
         <nav id="header"  class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Mi Club') }} --}}
                     <img id='logo' src="{{asset('/img/logo-blanco.png')}}" alt="">
                 </a>
+                @else
+                         <a class="navbar-brand" href="{{ url('home') }}">
+                    {{-- {{ config('app.name', 'Mi Club') }} --}}
+                    <img id='logo' src="{{asset('/img/logo-blanco.png')}}" alt="">
+                </a>
+                @endguest
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-light navbar-toggler-icon">
                       <i class="fas fa-bars"></i>
@@ -71,22 +78,19 @@
                             @endif
                         @else
                           <ul class="header-logged">
-
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('labels') }}">{{ __('Mis Etiquetas') }}</a>
+                            </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{ url('profile') }}">{{ __('Mi perfil') }}</a>
                             </li>
-                          </ul>
-                          <ul>
+                         
                             <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><i id="notificaciones" class="fas fa-bell"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" >El usuario {{ Auth::user()->name }} Te etiqueto en una publicacion
-                                        </a>
-                                    </div>
+                                
+                                       @include('partials.notificaciones')  
                             </li>
 
                             <li>

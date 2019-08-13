@@ -6,15 +6,9 @@
       <ul>
         <!-- pasar solo estooo -->
       @forelse($posts as $post)
-      @if (auth()->id()==$post->user_id)
+      
+      @if (auth()->id()==$post->etiqueta_id)
       <article class="publicacion">
-        @if (auth()->id()==$post->user_id)
-          <form class="eliminar" action="{{URL::to('/')}}/post/{{ $post->id }}" method="POST">
-             {{ csrf_field() }}
-             {{ method_field('DELETE') }}
-             <button id="eliminar" type="submit"><i class="fas fa-trash-alt"></i></button>
-           </form>
-        @endif
           <div class="quienPublica">
               <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="{{ Storage::url($post->user->person->avatar) }}"  alt="" width="50px"></a>
               <div class="quienPublicaInfo">
@@ -46,11 +40,10 @@
 
 
 
-                  
                   @forelse($comments as $comment)
                   @if ($post->id == $comment->post_id)
-                  <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="storage\{{ $comment->user->person->avatar }}"  alt="" width="50px"></a>
-                 <b>{{$comment->user->name }}</b> <p>Comento: {{$comment->body }}</p>
+                 <b>{{$post->user->name }}</b>
+                <p>{{$comment->body }}</p>
               @endif
 
 
@@ -58,12 +51,11 @@
                 @endforelse
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
-              
                 <form action="comment/create" method="POST">
 
                    {{ csrf_field() }}
 
-                   <input type="hidden" value="<?= $post->id ?>" name="postId">
+                   <input type="hidden" value='1' name="postid">
                     <input type="text" class="" id="bodyComentarios" name="body" placeholder="Deja acá tu comentario">
                  </form>
               </div>
@@ -72,7 +64,7 @@
             </article>
 @endif
       @empty
-      <li><br>No existen posteos </b><img src="/img/triste.jpg" width="150px"></li>
+      <br>Nadie te ha etiquetado aun </b><img src="/img/triste.jpg" width="150px">
       @endforelse
     <!-- pasar solo estooo -->
 </ul>

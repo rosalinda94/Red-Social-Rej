@@ -6,6 +6,7 @@
       <ul>
       	<!-- pasar solo estooo -->
 			@forelse($posts as $post)
+
 			<article class="publicacion">
         @if (auth()->id()==$post->user_id)
           <form class="eliminar" action="{{URL::to('/')}}/post/{{ $post->id }}" method="POST">
@@ -15,7 +16,7 @@
            </form>
         @endif
 			    <div class="quienPublica">
-              <a class="cuadrado5" href="profile/profile"><img id="fotoPerfil5" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="" width="50px"></a>
+              <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="{{ Storage::url($post->user->person->avatar) }}"  alt="" width="50px"></a>
               <div class="quienPublicaInfo">
                 <h4 class="userName" >{{$post->user->name}}</h4>
                 @isset($post->group)
@@ -47,8 +48,8 @@
 
                   @forelse($comments as $comment)
                   @if ($post->id == $comment->post_id)
-                 <b>{{$post->user->name }}</b>
-                <p>{{$comment->body }}</p>
+                  <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="storage\{{ $comment->user->person->avatar }}"  alt="" width="50px"></a>
+                 <b>{{$comment->user->name }}</b> <p>Comento: {{$comment->body }}</p>
               @endif
 
 
@@ -60,10 +61,8 @@
 
                    {{ csrf_field() }}
 
-                   <input type="hidden" value='1' name="postId">
+                   <input type="hidden" value="<?= $post->id ?>" name="postId">
                     <input type="text" class="" id="bodyComentarios" name="body" placeholder="Deja acá tu comentario">
-                   {{-- <input type="hidden" name="postid" value="1">
-                    <input type="text" class="form-control" id="body" name="body" placeholder="Deja aca tu comentario"> --}}
                  </form>
               </div>
 

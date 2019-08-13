@@ -41,8 +41,34 @@ class PostController extends Controller
         $posts= Post::where('group_id', '=', $data['id'])->latest()->paginate(10);
         $users= User::all();
         $groups= Group::all();
+        $comments= comment::all();
 
-      return view('home.index', compact('posts', 'users','groups'));
+      return view('home.index', compact('posts', 'users','groups','comments'));
+    }
+
+
+    public function notificacion(Request $data)
+    {
+        $posts= Post::where('id', '=', $data['id'])->latest()->paginate(10);
+        $users= User::all();
+        $additionals= Additional::all();
+        $groups= Group::all();
+        $comments= comment::all();
+
+
+      return view('home.labels', compact('posts', 'users','groups','comments','additionals'));
+    }
+
+    public function etiqueta(Request $data)
+    {
+        $posts= Post::where('etiqueta_id', '=',Auth::id())->latest()->paginate(10);
+        $users= User::all();
+        $additionals= Additional::all();
+        $groups= Group::all();
+        $comments= comment::all();
+
+
+      return view('home.labels', compact('posts', 'users','groups','comments','additionals'));
     }
 
     /**
@@ -62,16 +88,29 @@ class PostController extends Controller
 
     public function create(Request $data)
     {
-      $ruta= request()->file('avatar')->store('public');
-       $nombreArchivo= basename($ruta);
+        if (is_null($data['avatar'])){
+            $post = Post::create([
+            'body' => $data['body'],
+            'group_id' => $data['actividad'],
+            'etiqueta_id' => $data['etiqueta'],
+            'user_id' => Auth::id(),
+            ]);
+           
+        }else{
+             $ruta= request()->file('avatar')->store('public');
+            $nombreArchivo= basename($ruta);
 
-       $post = Post::create([
-        'body' => $data['body'],
-        'image' => $nombreArchivo,
-        'group_id' => $data['actividad'],
-        'etiqueta_id' => $data['etiqueta'],
-        'user_id' => Auth::id(),
-      ]);
+            $post = Post::create([
+            'body' => $data['body'],
+            'image' => $nombreArchivo,
+            'group_id' => $data['actividad'],
+            'etiqueta_id' => $data['etiqueta'],
+            'user_id' => Auth::id(),
+            ]);
+        }
+            
+
+       
         return redirect('/index');
 
     }
@@ -143,11 +182,28 @@ class PostController extends Controller
      */
 
 
-    public function destroy(Request $request) {
-      $post = Post::findOrFail($request->id);
-      $post->delete();
+    public function destroy($id) {
+      
+      $result = Post::find($id);
+      $Comment = Comment::where('post_id', '=',$id);
+      $Comment->delete();
+      $result->delete();
 
       return redirect('/index');
+/* public function destroy($id)
+{
+    // buscas el padre
+    $result = Producto::find($id);
+
+    // buscas el hijo y lo borras
+    $resultImagen = Imagen::find($result->id_producto);
+    $resultImagen->delete();
+
+    // borrar el padre
+    $result->delete();
+
+    return redirect('/productos')->with('success', 'Stock has been deleted Successfully');
+}*/
     }
 
 }

@@ -7,14 +7,14 @@
     @csrf
 
  <div class="que-pensas">
-   <a class="cuadrado2" href="profile/profile"><img id="fotoPerfil2" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt=""></a>
+   <a class="cuadrado2" href="profile"><img id="fotoPerfil2" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt=""></a>
    <textarea name="body" rows="1" cols="60" class="comentario" placeholder="{{Auth::user()->name }}, qué queres escribir hoy?"></textarea>
  </div>
 
  <div class="que-publicar">
    <div class="subiFoto">
      <label for="avatar" class="labelAvatar">{{ __('Compartí tus imagenes') }}</label>
-         <input style='display:none' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
+         <input style='display:none' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}"  autocomplete="avatar" autofocus>
 
          @error('avatar')
              <span class="invalid-feedback" role="alert">
