@@ -1,3 +1,4 @@
+
 /* header cuando el usuario esta logueado */
 
 .navbarSupportedContent{
@@ -15,7 +16,6 @@
 
 
 .cuadrado {
-  background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
   width: 40px;
   height: 40px;
 }

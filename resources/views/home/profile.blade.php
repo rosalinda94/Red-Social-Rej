@@ -40,6 +40,7 @@
   @endif
    @endforeach
 </article>
+
 </section>
 
   <!-- Esto es para agregar posts -->

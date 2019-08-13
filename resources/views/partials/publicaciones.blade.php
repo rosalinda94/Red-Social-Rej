@@ -27,8 +27,9 @@
             </div>
 
               <p class="textoPublicacion">{{$post->body }}</p>
-
+              @isset($post->image)
               <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="">
+              @endisset
               <br> <br>
 
                 <div id='publicacion-user' class="publicacion-user">

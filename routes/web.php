@@ -67,10 +67,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 
-Route::get('/install', function(){
+Route::get('/sl', function(){
   Artisan::call('storage:link');
 });
 
 Route::get('/correrMigracion', function(){
-  Artisan::call('migrate');
+  Artisan::call('migrate:fresh --seed');
 });
