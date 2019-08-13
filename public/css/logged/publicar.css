@@ -123,6 +123,11 @@ display: none;
     display: none;
   }
 
+  #etiqueta,
+  #actividad {
+    width: 100px;
+  }
+
 
   .que-pensas .comentario{
     height: 70px;
@@ -140,5 +145,9 @@ display: none;
 
 .cuadrado{
   margin: 0 auto;
+}
+.que-publicar{
+  display: flex;
+  justify-content: center;
 }
 }
