@@ -39,7 +39,7 @@ window.onload=function(){
       alert('No se pueden ingresar espacios vacios');
     }
 
-    if(isNaN(campoPartner.value)){    //Controlar esto
+    if(isNaN(campoPartner.value)){  
       this.style.borderColor = 'red';
 
     } else if (campoPartner.value.length >=1){
