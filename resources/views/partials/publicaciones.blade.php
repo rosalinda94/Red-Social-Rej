@@ -46,7 +46,7 @@
 
 
                 @include('partials.comment')
-                  
+
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
                 <form action="comment/create" method="POST">
@@ -68,5 +68,5 @@
 </ul>
 
       {{ $posts->appends(request()->query())->links() }}
-
+      <script src="{{ asset('js/home.js') }}" defer></script>
        </article>

@@ -97,7 +97,7 @@ class PostController extends Controller
             'etiqueta_id' => $data['etiqueta'],
             'user_id' => Auth::id(),
             ]);
-           
+
         }else{
              $ruta= request()->file('avatar')->store('public');
             $nombreArchivo= basename($ruta);
@@ -110,9 +110,9 @@ class PostController extends Controller
             'user_id' => Auth::id(),
             ]);
         }
-            
 
-       
+
+
         return redirect('/index');
 
     }
@@ -147,7 +147,7 @@ class PostController extends Controller
         $posts= Post::latest()->paginate(10);
         $users= User::all();
         $groups= Group::all();
-        $comments= comment::all();        
+        $comments= comment::all();
         $additionals= Additional::all();
         $likes= like::all();
         return view('home.profile', compact('posts', 'users','groups','comments','additionals','likes'));
@@ -185,7 +185,7 @@ class PostController extends Controller
 
 
     public function destroy($id) {
-      
+
       $result = Post::find($id);
       $Comment = Comment::where('post_id', '=',$id);
       $Comment->delete();

@@ -46,7 +46,7 @@
     </section>
     </div>
   </body>
-  <script src="{{ asset('js/home.js') }}" defer></script>
+  
 
 </div>
 @endsection

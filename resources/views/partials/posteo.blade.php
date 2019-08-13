@@ -46,5 +46,4 @@
    <button type="submit" class="botonPublicar"><i class="fas fa-check"></i></button>
  </div>
 </form>
-
 </article>

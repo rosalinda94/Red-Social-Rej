@@ -39,7 +39,7 @@ window.onload=function(){
       alert('No se pueden ingresar espacios vacios');
     }
 
-    if(isNaN(campoPartner.value) != false){    //Controlar esto
+    if(isNaN(campoPartner.value)){    //Controlar esto
       this.style.borderColor = 'red';
 
     } else if (campoPartner.value.length >=1){
@@ -129,12 +129,12 @@ window.onload=function(){
     }
   }
 
-  var validarPartner = function(event){
+  var validarPartner = function(event){ // chequear esto
     if(campoPartner.value.trim() == ''){
       alert('El campo Nro de Socio no puede estar vacio');
       event.preventDefault();
       campoPartner.style.borderColor= 'red';
-    } else if (parseInt(campoPartner.value)!= true) {
+    } else if (parseInt(campoPartner.value) == false) {
         alert('El campo Nro de Socio debe ser un número');
         event.preventDefault();
         campoPartner.style.borderColor= 'red';

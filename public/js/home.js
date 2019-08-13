@@ -3,12 +3,22 @@ window.onload=function(){
   let campoAvatar = document.getElementById('avatar');
   let campoPublicacion = document.getElementById('publicacion');
   let campoCategoria = document.querySelector('.selectActividad');
+  let campoEliminar = document.getElementById('eliminar');
 
   campoAvatar.addEventListener("change", function(){
     var extensiones = /(.jpg|.jpeg|.png)$/i;
     if(!extensiones.exec(campoAvatar.value)){
       alert('Se aceptan las siguientes extensiones: .jpg, .jpeg, .png');
       campoAvatar.value='';
+    }
+  })
+
+  campoEliminar.addEventListener("click", function(){
+    var mensaje = confirm('Desea eleminar la publicacion?');
+    if (mensaje == true){
+      alert('Publicacion eliminada');
+    } else{
+      redirect('/index');  // VER ESTO
     }
   })
 
