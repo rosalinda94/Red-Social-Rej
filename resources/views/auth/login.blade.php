@@ -76,6 +76,7 @@
                             </div>
                         </div>
                     </form>
+                    <script src="{{ asset('js/login.js') }}" defer></script>
                 </div>
         </div>
     </div>

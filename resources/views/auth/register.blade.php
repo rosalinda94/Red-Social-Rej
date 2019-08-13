@@ -139,7 +139,7 @@
                             </div>
                         </div>
                     </form>
-                    
+                    <script src="{{ asset('js/registracion.js') }}" defer></script>
                 </div>
             </div>
           </div>
