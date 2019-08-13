@@ -23,14 +23,14 @@ style="background-image: url('{{ Storage::url(Auth::user()->additional->image) }
     @csrf
     <label for="portada" class="labelAvatar">{{ __('Foto de portada') }}</label>
     <input style='display: none;' id="portada" type="file" accept="image/*" name="portada" value="{{ old('portada') }}" required autocomplete="portada" autofocus>
-    <button>Cambiar imagen</button>
+    <button class="botonPortada">Cambiar imagen</button>
   </form> 
   @else
     <form class="fotoPortada" action="/profile/portada" method="post" enctype="multipart/form-data">
     @csrf
     <label for="portada" class="labelAvatar">{{ __('Foto de portada') }}</label>
     <input style='display: none;' id="portada" type="file" accept="image/*" name="portada" value="{{ old('portada') }}" required autocomplete="portada" autofocus>
-    <button>Enviar</button>
+    <button class="botonPortada">Enviar</button>
 
   @endif
 

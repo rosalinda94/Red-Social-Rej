@@ -38,6 +38,17 @@
 
 }
 
+.botonPortada {
+    padding:.375rem .75rem;
+    background: #575756;
+    color:#fff;
+   margin: 7px;
+    font-family: 'oswald', sans-serif;
+    font-size: 12px;
+    height: 50px;
+    border: none;
+}
+
 /* foto portada */
 .fotoPortada{
 display: flex;

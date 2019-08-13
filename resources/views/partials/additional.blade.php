@@ -1,5 +1,5 @@
 
-   @if($additional->city!='')
+   @isset($additional->city)
          <li>Situación sentimental: {{$additional->status}} </li>
          <li>Ciudad: {{$additional->city}}</li>
          <li>Telefono: {{$additional->mobileNumber}} </li>
@@ -43,4 +43,4 @@
     </div>
       <button  id='submit' type="submit" class="botonPublicar" style="width: 100%" >Enviar</button>
   </form>
-      @endif
+      @endisset
