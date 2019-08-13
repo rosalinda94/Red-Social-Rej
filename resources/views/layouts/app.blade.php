@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
 
-    <script src="{{ asset('js/loading.js') }}" defer></script>
+
     <script src="{{ asset('js/app.js') }}" defer></script>
 
 
@@ -27,7 +27,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/logged/headerLogged.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
 

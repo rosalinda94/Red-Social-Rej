@@ -41,7 +41,8 @@
         @include('partials.publicidad')
       </article>
       <article class="calendario">
-        calendario
+        Calendario
+        <div id="calendar"></div>
       </article>
     </section>
     </div>

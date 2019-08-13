@@ -1,5 +1,6 @@
 window.onload=function(){
-  let formRegister = document.getElementById('formularioRegistro');
+  console.log("hola");
+  let formLogin = document.getElementById('formularioLogin');
   let campoEmail = document.getElementById('email');
   let campoPassword = document.getElementById('password');
   var emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -45,4 +46,11 @@ window.onload=function(){
       campoPasswordConfirm.style.borderColor= 'red';
     }
   }
+
+  var validar = function(event){
+    validarEmail(event);
+    validarPassword(event);
+  };
+
+  formLogin.addEventListener('submit',validar);
 }
