@@ -142,7 +142,7 @@ window.onload=function(){
   }
 
       var validarSelect = function(event){
-        if(campoSex.value != 0 && campoSex.value !=1){
+        if(campoSex.value != 0 && campoSex.value != 1){
           alert('Indique su genero');
           event.preventDefault();
           campoSex.style.borderColor='red';

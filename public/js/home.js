@@ -2,7 +2,7 @@ window.onload=function(){
   let formPosteo = document.getElementById('formularioPosteo');
   let campoAvatar = document.getElementById('avatar');
   let campoPublicacion = document.getElementById('publicacion');
-  let campoCategoria = document.getElementById('actividad');
+  let campoCategoria = document.querySelector('.selectActividad');
 
   campoAvatar.addEventListener("change", function(){
     var extensiones = /(.jpg|.jpeg|.png)$/i;
@@ -19,16 +19,16 @@ window.onload=function(){
     }
   }
 
-  var validarSelect = function(event){
-    if(campoCategoria.value == ''){
-      alert('Indique una categoria');
-      event.preventDefault();
-    }
-  }
+  // var validarSelect = function(event){
+  //   if(campoCategoria.value == ''){
+  //     alert('Indique una categoria');
+  //     event.preventDefault();
+  //   }
+  // }
 
   var validar = function(event){
     validarPublicacion(event);
-    validarSelect(event);
+    // validarSelect(event);
   }
 
   formPosteo.addEventListener('submit',validar);

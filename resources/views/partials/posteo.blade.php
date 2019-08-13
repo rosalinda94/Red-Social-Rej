@@ -35,8 +35,7 @@
    </div>
    <div class="actividad">
    <select id="actividad" value='' name="actividad" >
-     <option disabled selected>Actividad deportiva  </option>
-
+    <option disabled selected>Actividad deportiva  </option>
         @forelse($groups as $group)
     <option id="actividad" name="actividad" value="{{$group->id}}">{{$group->name }}</option>
          @empty
