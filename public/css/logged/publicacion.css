@@ -64,6 +64,7 @@
   align-items: center;
   font-family:'oswald', sans-serif;
   font-size: 14px;
+  border: none;
 }
 
 .liked {
@@ -95,6 +96,8 @@ padding: 10px;
 /* eliminar publicacion */
 
 .eliminar {
+  margin-top: 20px;
+  margin-right: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -118,7 +121,7 @@ margin-top: 0;
 }
 /* eliminar comentarios */
 
- #eliminado {
+ #eliminarComentario {
   padding: 15px;
   background: #fff;
   border: none;
@@ -175,7 +178,8 @@ background-color: #ececec;
 }
 
 .form-row{
-  border-bottom: 1px solid #ececec;
+  border-bottom: 2px solid #575756;
+  margin-bottom: 30px;
 }
 
 /* no hay posteos */
@@ -220,10 +224,17 @@ background-color: #ececec;
     padding: 0;
     margin: 0 auto;
     align-items: center;
+    border: none;
+    background-color: #fff;
+  }
+
+  .share-button {
+    margin: 0;
   }
 
   .botones{
-   justify-content: center;
+   justify-content: space-between;
+   align-items: center;
   }
 
   .comentarioX{
