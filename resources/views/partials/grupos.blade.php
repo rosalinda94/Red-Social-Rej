@@ -10,3 +10,12 @@
       <li>no hay grupos</li>
     @endforelse
 </div>
+
+<select  id="catTablet" class="custom-select custom-select-lg mb-3">
+ <option selected>CATEGORÍAS</option>
+ @foreach($groups as $group)
+   <option> <a type="submit" href="filtrarCategoria?id={{$group->id}}" class="catTablet">{{$group->name }}</a></option>
+   <li>no hay grupos</li>
+ @endforeach
+
+</select>

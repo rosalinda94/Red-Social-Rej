@@ -7,6 +7,10 @@
   border-radius: 50%;
   padding: 4px;
 }
+.cuadrado5{
+  display: flex;
+  align-items: center;
+}
 
 .principal {
   width: 700px;
@@ -39,25 +43,36 @@
 }
 
 /* subir archivo */
-.labelAvatar{
+
+.fa-image{
+display: none;
+}
+
+/* botones para subir info */
+.labelAvatar,
+#etiqueta,
+#actividad {
     display: flex;
-    background-color: transparent;
+    background-color: #ececec;
     color:#575756;
     font-family:'oswald', sans-serif;
     font-size: 14px;
     margin:0;
     align-items: center;
+    border:none;
+    border-radius: 0!important;
+    padding:10px;
+    margin: 7px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 200px;
 }
-#etiqueta,
-#actividad{
-  background-color: rgba(0,0,0,0);
-}
+
+
 .labelAvatar:hover,
-.etiqueta:hover,
-.actividad:hover,
 #etiqueta:hover,
-#actividad:hover,
-.subiFoto:hover{
+#actividad:hover{
   background-color: #575756;
   color: #ececec;
 }
@@ -66,31 +81,7 @@
   background-color: #b58ec0;
   color: #ececec;
 }
-/* botones para subir info */
 
-#etiqueta,
-#actividad,
-.etiqueta,
-.actividad,
-.subiFoto{
-  color: #575756;
-  background-color: #ececec;
-  border:none;
-  border-radius: 0;
-  font-family:'oswald', sans-serif;
-  font-size: 14px;
-}
-
-.etiqueta,
-.actividad,
-.subiFoto{
-  padding:.375rem .75rem;
-  margin: 7px;
-  display: flex;
-  justify-content: center;
-  height: 50px;
-  width: 300px;
-}
 
 /* boton enviar */
 
@@ -109,6 +100,10 @@
   color: #ececec;
 }
 
+.enter{
+  display: none;
+}
+
 
 /* ------------------------- Inicio Responsive celular --------------------- */
 @media (max-width:700px){
@@ -121,4 +116,19 @@
 
   #fotoPerfil4{
     display: none;
+  }
+
+
+  .que-pensas .comentario{
+    height: 70px;
+  }
+
+  /* subir archivos */
+
+.subirImg{
+  display: none;
+}
+  .fa-image{
+  display: flex;
+  font-size: 22px;
   }

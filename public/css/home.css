@@ -24,7 +24,7 @@
 }
 
 .home-logueado p{
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 h4 {
@@ -103,6 +103,36 @@ i {
 } */
 
 /* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:1200px){
+
+.bodyApp{
+  display: flex;
+  flex-direction: column;
+}
+
+.home-logueado{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aside{
+  width: 100%;
+  margin-top: 15px;
+}
+
+.profile-aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  height: 65px;
+}
+
+
+/* ------------------------- Inicio Responsive celular --------------------- */
 @media (max-width:700px){
 
 .bodyApp{
@@ -129,5 +159,4 @@ i {
   flex-direction: row;
   padding: 5px;
   height: 65px;
-
 }

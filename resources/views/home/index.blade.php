@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @push('styles')
-  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
   <link href="{{ asset('css/logged/grupos.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+
 
 @endpush
 @section('content')
@@ -46,7 +47,7 @@
     </section>
     </div>
   </body>
-  <script src="{{ asset('js/home.js') }}" defer></script>
+
 
 </div>
 @endsection

@@ -6,7 +6,9 @@
   background-color: #dadad9;
   color: #575756;
   flex-wrap: wrap;
+    font-weight: 300;
 }
+
 
 .user-name {
   font-family: 'oswald', sans-serif;
@@ -28,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   background-image: url(/img/fondo-secundario.jpg);
+  background-size: cover;
   height: 70vh;
   width: 100%;
   background-color: #939393;
@@ -58,14 +61,9 @@ justify-content: center;
 
 
 /* foto de perfil */
-.cuadrado4 {
-  display: flex;
-  /* background: url() 50% 50% no-repeat; /* 50% 50% centers image in div */ */
-  width: 200px;
-  height: 200px;
-}
 
-.cuadrado4 #fotoPerfil4 {
+
+.cuadrado3 #fotoPerfil3 {
   object-fit: cover;
   width: 200px;
   height: 200px;
@@ -129,4 +127,66 @@ height: 900px;
 .fa-sad-cry{
   margin-left: 20px;
   font-size: 25px;
+}
+
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:1200px){
+
+  .bodyApp{
+    display: flex;
+    flex-direction: column;
+  }
+  .perfilLogueado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portadaUsuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .datosUsuario  {
+    height: auto;
+    width: 100%;
+  }
+
+  .posteosUsuario{
+    width: 100%;
+  }
+
+}
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+
+  .bodyApp{
+    display: flex;
+    flex-direction: column;
+  }
+  .perfilLogueado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portadaUsuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .datosUsuario  {
+    height: auto;
+  }
+
+  .posteosUsuario{
+    width: 100%;
+  }
+
 }
