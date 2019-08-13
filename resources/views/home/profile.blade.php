@@ -9,8 +9,8 @@
   <div class="perfilLogueado">
 <section class="portadaUsuario">
 <div class="infoUsuario">
-  <div class="cuadrado4">
-    <img id="fotoPerfil4" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="">
+  <div class="cuadrado3">
+    <img id="fotoPerfil3" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="">
   </div>
   <h3 class="user-name">{{Auth::user()->person->name }} {{Auth::user()->person->lastName }}</h3>
 </div>
@@ -28,12 +28,17 @@
 
     <h4>Datos Adicionales</h4>
    @include('partials.register')
-   
+
 </article>
 
   <!-- Esto es para mostrar la imagen abajo -->
 <article class="fotosUsuario">
-  <img src="storage\{{ Auth::user()->person->avatar }}" alt="" width="100px">
+  @foreach($posts as $post)
+
+  @if (auth()->id()==$post->user_id)
+  <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="" width="50px" height="10px">
+  @endif
+   @endforeach
 </article>
 </section>
 

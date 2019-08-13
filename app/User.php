@@ -5,22 +5,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-  
-    public function person (){
-          return $this->hasOne(Person::class);
-    }
-    public function additional(){
-          return $this->hasOne(User::class);
-    }
-
-    public function posts()
-    {
-      return $this->hasMany(Post::class);
-    }
-
-    public function like(){
-    return $this->belongsTo(Like::class);
-  }
     /**
      * The attributes that are mass assignable.
      *
@@ -47,4 +31,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+  
+    public function person (){
+          return $this->hasOne(Person::class);
+    }
+
+    public function additional()
+    {
+          return $this->hasOne(User::class);
+    }
+
+    public function posts()
+    {
+      return $this->hasMany(Post::class);
+    }
+
+    public function like()
+    {
+        return $this->hasMany(Like::class, 'user_id');
+    }
 }

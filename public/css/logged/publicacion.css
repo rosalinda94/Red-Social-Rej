@@ -36,7 +36,6 @@
 
 .textoPublicacion{
   font-family: 'roboto', sans-serif;
-  font-weight: 300;
 }
 
 .imgPublicacion{
@@ -65,7 +64,6 @@
   font-family:'oswald', sans-serif;
   font-size: 14px;
 }
-
 
 .liked {
     color: #662382;
@@ -172,7 +170,7 @@ background-color: #ececec;
 .queComento{
   margin: 0;
   font-family: 'roboto', sans-serif;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .form-row{

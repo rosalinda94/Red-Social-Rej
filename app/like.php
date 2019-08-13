@@ -4,17 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class like extends Model
+class Like extends Model
 {
     protected $table = 'likes';
+
     protected $fillable = [
       'id', 'name', 'post_id','user_id'
     ];
 
     public function user(){
-      return $this->hasOne(User::class);
+      return $this->belongsTo(User::class);
     }
+    
     public function post (){
-          return $this->hasOne(Post::class);
+          return $this->belongsTo(Post::class);
     }
 }

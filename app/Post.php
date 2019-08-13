@@ -8,13 +8,17 @@ class Post extends Model
 {
 
   protected $table = 'posts';
+
   protected $fillable = [
      'body', 'image', 'user_id', 'group_id', 'etiqueta_id'
   ];
 
+  protected $appends = ['liked'];
+
   public function user(){
     return $this->belongsTo(User::class);
   }
+
   public function person(){
     return $this->belongsTo(Person::class);
   }
@@ -24,6 +28,12 @@ class Post extends Model
   }
 
   public function like(){
-    return $this->belongsTo(Like::class);
+    return $this->hasMany(Like::class);
   }
+
+  public function getLikedAttribute() 
+  {
+    return $this->like->contains(auth()->id());
+  }
+
 }

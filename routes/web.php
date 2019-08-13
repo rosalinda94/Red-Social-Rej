@@ -23,14 +23,15 @@ Route::get('/profile', function () {
     return view('home.profile');
 });
 
+Route::post('/post/{id}/like', 'LikeController@create');
+Route::delete('/post/{id}/like', 'LikeController@destroy');
+
 Route::delete('/post/{id}', 'PostController@destroy');
 
 Route::delete('/comment/{id}', 'CommentsController@destroy');
 /**------------------------*/
 
 Route::post('/comment/create', 'CommentsController@create');
-
-Route::post('/like/create', 'LikeController@create');
 
 /*--------------------------*/
 

@@ -31,11 +31,13 @@
               <br> <br>
 
                 <div id='publicacion-user' class="publicacion-user">
+
                   <div class="botones">   
-                  <a id='like-button' class='like-button' href="#"><i class="fas fa-thumbs-up"></i>Me gusta</a>
-                  <a id='dislike-button' class='dislike-button' href="#"><i class="fas fa-thumbs-down"></i>No me gusta</a>
+                   @include('partials.like')
                   
                     <a id='share-button' class='share-button' href="#"><i class="fas fa-share"></i>Compartir</a>
+
+
                   </div>
                   <div id='interaccion' class="interaccion">
                     <!-- Aca va la informacion sobre la interaccion del usuario con el posteo -->

@@ -26,14 +26,13 @@ class LikeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $data)
+    public function create($id)
     {
-        $likes = Like::create([
-            'post_id' =>$data['postId'],
-            'user_id' => Auth::id(),
-            ]);
+        auth()->user()->like()->create([
+            'post_id' => $id
+        ]);          
 
-        return redirect('/index');
+        return back();
     }
 
     /**
@@ -89,6 +88,7 @@ class LikeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        auth()->user()->like()->where('post_id', $id)->delete();
+         return back();
     }
 }

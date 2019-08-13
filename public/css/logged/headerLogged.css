@@ -43,4 +43,12 @@
 /* -------------------------  FIN Header & Footer ------------------------- */
 
   /* ------ comienzo responsive ------ */
-  @media(max-width:736px) {
+  @media(max-width:700px) {
+
+
+    .cuadrado{
+      display: none;
+    }
+    .cuadrado #fotoPerfil {
+      display: none;
+    }
