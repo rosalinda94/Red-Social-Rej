@@ -24,11 +24,15 @@ Route::get('/profile', function () {
 });
 
 Route::delete('/post/{id}', 'PostController@destroy');
+
+Route::delete('/comment/{id}', 'CommentsController@destroy');
 /**------------------------*/
 
 Route::post('/comment/create', 'CommentsController@create');
 
-/**------------------------*/
+Route::post('/like/create', 'LikeController@create');
+
+/*--------------------------*/
 
 Route::get('/filtrarCategoria', 'PostController@filter');
 

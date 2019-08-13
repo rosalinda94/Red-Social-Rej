@@ -3,7 +3,7 @@
 @endpush
 
  <article class="publicacion">
-      <ul>
+      <ul class="publicaciones">
         <!-- pasar solo estooo -->
       @forelse($posts as $post)
       
@@ -38,18 +38,9 @@
                   </div>
                 </div>
 
+                @include('partials.comment')
 
-
-                  @forelse($comments as $comment)
-                  @if ($post->id == $comment->post_id)
-                 <b>{{$post->user->name }}</b>
-                <p>{{$comment->body }}</p>
-              @endif
-
-
-                @empty
-                @endforelse
-              <div class="form-row">
+               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
                 <form action="comment/create" method="POST">
 
@@ -64,7 +55,7 @@
             </article>
 @endif
       @empty
-      <br>Nadie te ha etiquetado aun </b><img src="/img/triste.jpg" width="150px">
+      <li class="noPost">No existen etiquetas </b><i class="fas fa-sad-cry"></i></li>
       @endforelse
     <!-- pasar solo estooo -->
 </ul>

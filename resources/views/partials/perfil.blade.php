@@ -31,9 +31,10 @@
               <br> <br>
 
                 <div id='publicacion-user' class="publicacion-user">
-                  <div class="botones">
-                    <a id='like-button' class='like-button' href="#"><i class="fas fa-thumbs-up"></i>Me gusta</a>
-                    <a id='dislike-button' class='dislike-button' href="#"><i class="fas fa-thumbs-down"></i>No me gusta</a>
+                  <div class="botones">   
+                  <a id='like-button' class='like-button' href="#"><i class="fas fa-thumbs-up"></i>Me gusta</a>
+                  <a id='dislike-button' class='dislike-button' href="#"><i class="fas fa-thumbs-down"></i>No me gusta</a>
+                  
                     <a id='share-button' class='share-button' href="#"><i class="fas fa-share"></i>Compartir</a>
                   </div>
                   <div id='interaccion' class="interaccion">
@@ -43,19 +44,7 @@
                     $numero_aleatorio = rand(1,5) . ' veces compartidos'; ?></i>
                   </div>
                 </div>
-
-
-
-
-                  @forelse($comments as $comment)
-                  @if ($post->id == $comment->post_id)
-                  <a class="cuadrado5" href="profile"><img id="fotoPerfil5" src="storage\{{ $comment->user->person->avatar }}"  alt="" width="50px"></a>
-                 <b>{{$comment->user->name }}</b> <p>Comento: {{$comment->body }}</p>
-              @endif
-
-
-                @empty
-                @endforelse
+               @include('partials.comment')
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">
 

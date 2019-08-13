@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Person;
+use App\Like;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
 
-class PersonController extends Controller
+class LikeController extends Controller
 {
 
     /**
@@ -18,7 +18,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-       return view('nosotros');
+
      }
 
     /**
@@ -26,9 +26,14 @@ class PersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $data)
     {
+        $likes = Like::create([
+            'post_id' =>$data['postId'],
+            'user_id' => Auth::id(),
+            ]);
 
+        return redirect('/index');
     }
 
     /**
@@ -73,14 +78,7 @@ class PersonController extends Controller
      */
     public function update(Request $data)
     {
-       /* $ruta= request()->file('avatar')->store('public');
-        $nombreArchivo= basename($ruta);
-     
-      DB::update('update persons set avatar = ? where id = 1',[$nombreArchivo]);
-      return redirect('/profile');
-
- */
-
+      
     }
 
     /**
