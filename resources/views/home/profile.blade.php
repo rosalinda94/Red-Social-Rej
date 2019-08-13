@@ -19,7 +19,8 @@
   <form class="fotoPortada" action="index" method="post" enctype="multipart/form-data">
     <label for="avatar" class="labelAvatar">{{ __('Foto de portada') }}</label>
     <input style='display: none;' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
-  </form>
+    <button>Enviar</button>
+  </form> 
 </section>
 
 <section class="datosUsuario">

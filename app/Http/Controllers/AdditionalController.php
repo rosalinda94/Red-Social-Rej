@@ -36,6 +36,7 @@ class AdditionalController extends Controller
         'date' => $data['date'],
         'user_id' => Auth::id(),
       ]);
+       
         return redirect('/profile');
 
     }

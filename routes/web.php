@@ -53,8 +53,6 @@ Route::get('/profile', 'PostController@show');
 
 Route::get('/profile/create', 'AdditionalController@create');
 
-Route::post('/profile/avatar', 'AdditionalController@avatar');
-
 
 Route::get('/post/create', 'PostController@create');
 
