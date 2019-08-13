@@ -36,7 +36,7 @@
 
     </section>
 
-<section class="aside2">
+    <section class="aside2">
       <article class="publicidad">
         @include('partials.publicidad')
       </article>
@@ -45,6 +45,8 @@
       </article>
     </section>
     </div>
-  </div>
+  </body>
+  <script src="{{ asset('js/home.js') }}" defer></script>
 
+</div>
 @endsection
