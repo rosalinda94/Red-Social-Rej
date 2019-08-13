@@ -149,9 +149,9 @@ window.onload=function(){
         }
       }
 
-      var validarEmail = function(event){  //chequear esto
+      var validarEmail = function(event){
         if(!emailRegex.test(campoEmail.value)){
-          alert('El Email no es valido');
+          alert('El Email no tiene un formato valido');
           event.preventDefault();
           campoEmail.style.borderColor= 'red';
         }

@@ -11,8 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
     <script src="{{ asset('js/loading.js') }}" defer></script>
+    <script src="{{ asset('js/registracion.js') }}" defer></script>
+    <script src="{{ asset('js/login.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -87,10 +88,10 @@
                             <li class="nav-item">
                               <a class="nav-link" href="{{ url('profile') }}">{{ __('Mi perfil') }}</a>
                             </li>
-                         
+
                             <li class="nav-item dropdown">
-                                
-                                       @include('partials.notificaciones')  
+
+                                       @include('partials.notificaciones')
                             </li>
 
                             <li>
