@@ -18,6 +18,8 @@ class CreateAdditionalTable extends Migration
             $table->string('city')->nullable();
             $table->char('status')->nullable();
             $table->string('image')->nullable();
+            $table->date('date')->nullable();
+            $table->string('mobileNumber')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
 

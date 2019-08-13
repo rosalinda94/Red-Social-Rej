@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="{{ asset('js/register.js') }}" defer></script>
+
 
 <link href="{{ asset('css/login-registro/register.css') }}" rel="stylesheet">
 
-        @include('home.loading')
+        <!-- @include('home.loading') -->
         <div class="containerRegister">
         <div id="register" class="col-md-8">
             <div class="card">
@@ -61,10 +61,10 @@
                             <label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
 
                             <div class="col-md-6">
-                              <select id="sex" name="sex"  class="form-control">
+                              <select id="sex" name="sex" value=''  class="form-control">
                               <option  style="background-color: black" disabled selected>Selecciona tu sexo</option>
-                              <option style="background-color: black" id="sex"  name="sex" value="F">Femenino</option>
-                              <option style="background-color: black" id="sex" name="sex" value="M">Masculino</option>
+                              <option style="background-color: black"   name="sex" value='0'>Femenino</option>
+                              <option  style="background-color: black"  name="sex" value='1'>Masculino</option>
                               </select>
 
                                 @error('sex')
@@ -139,8 +139,9 @@
                             </div>
                         </div>
                     </form>
+                    <script src="{{ asset('js/registracion.js') }}" defer></script>
                 </div>
             </div>
           </div>
-
+        </div>
 @endsection

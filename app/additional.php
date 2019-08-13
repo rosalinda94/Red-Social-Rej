@@ -8,7 +8,7 @@ class additional extends Model
 {
     protected $table = 'additionals';
     protected $fillable = [
-      'city', 'image','status', 'user_id'
+      'city', 'image','status','mobileNumber', 'date',  'user_id'
     ];
 
     public function user(){

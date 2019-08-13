@@ -1,21 +1,22 @@
 @extends('layouts.app')
-
+@push('styles')
+  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/logged/grupos.css') }}" rel="stylesheet">
+@endpush
 @section('content')
   <body class="body">
 
     @include('home.loading')
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
     <div class="home-logueado">
 
       <section class="aside">
       <article class="profile-aside">
-
-       <a class="profile-picture" href="profile/profile"><img src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="" width="50px"> </a>
-
-
+        <div class="cuadrado4">
+          <img id="fotoPerfil4" src="{{ Storage::url(Auth::user()->person->avatar) }}">
+        </div>
         <!-- poner el nombre del usuario -->
-        <a class="profile-picture" href="profile.php"><h3 class="user-name">{{Auth::user()->person->name }} {{Auth::user()->person->lastName }}</h3></a>
+        <a class="profile-name" href="profile.php"><h3 class="user-name">{{Auth::user()->person->name }} {{Auth::user()->person->lastName }}</h3></a>
       </article>
 
       <article class="Accesos-directos">

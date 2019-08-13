@@ -19,8 +19,8 @@ class CommentsController extends Controller
     {
        $comment = Comment::create([
         'body' => $data['body'],
-        'post_id' =>  $data['postid'],
-        'user_id' => Auth::id(),
+        'post_id' =>  $data['postId'],
+        'user_id' => Auth::user()->id,
       ]);
         return redirect('/index');
 

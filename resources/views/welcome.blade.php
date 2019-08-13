@@ -1,7 +1,9 @@
 @extends('layouts.app')
-
-@section('nosotros')
+@push('styles')
 <link href="{{ asset('css/welcome/welcome.css') }}" rel="stylesheet">
+@endpush
+@section('nosotros')
+
 
   <body>
       <section class="home">

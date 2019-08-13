@@ -1,26 +1,15 @@
 /* publicar */
 
-.cuadrado2 {
-  background: url("{{ Auth::user()->person->avatar }"}.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
-  background-size: cover;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
 .cuadrado2 #fotoPerfil2 {
-  width: 80px;
-  height: 80px;
+  object-fit: cover;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  padding: 6px;
+  padding: 4px;
 }
 
 .principal {
   width: 700px;
-}
-
-input[type="file"] {
-    display: none;
 }
 
 .que-pensas {
@@ -44,30 +33,77 @@ input[type="file"] {
   margin: 10px;
 }
 
-/* .custom-file-upload {
-  font-family: 'Oswald', sans-serif;
-  border: none;
-  background-color: #ececec;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-} */
-
 /* que publicar? */
 .que-publicar{
   display: flex;
 }
 
-.que-publicar #avatar{
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+/* subir archivo */
+.labelAvatar{
+    display: flex;
+    background: transparent;
+    color:#575756;
+    font-family:'oswald', sans-serif;
+    font-size: 14px;
+    margin:0;
+    align-items: center;
+}
+#etiqueta,
+#actividad{
+  background-color: rgba(0,0,0,0);
+}
+.labelAvatar:hover,
+.etiqueta:hover,
+.actividad:hover,
+#etiqueta:hover,
+#actividad:hover{
+  background-color: #575756;
+  color: #ececec;
 }
 
+.botonPublicar:hover{
+  background-color: #b58ec0;
+  color: #ececec;
+}
+/* botones para subir info */
 
+#etiqueta,
+#actividad,
+.etiqueta,
+.actividad,
+.subiFoto{
+  color: #575756;
+  background-color: #ececec;
+  border:none;
+  border-radius: 0;
+  font-family:'oswald', sans-serif;
+  font-size: 14px;
+}
 
+.etiqueta,
+.actividad,
+.subiFoto{
+  padding:.375rem .75rem;
+  margin: 7px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 300px;
+}
 
-.
+/* boton enviar */
+
+.botonPublicar{
+  padding:.375rem .75rem;
+  margin: 7px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: #575756;
+}
+
+.fa-check{
+  color: #ececec;
+}
