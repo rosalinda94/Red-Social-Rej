@@ -5,7 +5,7 @@
 
 @endpush
 @section('content')
-  <body class="body">
+  <div class="body">
 
     @include('home.loading')
 
@@ -36,7 +36,7 @@
 
     </section>
 
-<section class="aside2">
+    <section class="aside2">
       <article class="publicidad">
         @include('partials.publicidad')
       </article>
@@ -46,5 +46,7 @@
     </section>
     </div>
   </body>
-<script src="{{ asset('js/home.js') }}" defer></script>
+  <script src="{{ asset('js/home.js') }}" defer></script>
+
+</div>
 @endsection
