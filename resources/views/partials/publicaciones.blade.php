@@ -27,26 +27,15 @@
             </div>
 
               <p class="textoPublicacion">{{$post->body }}</p>
-
+              @isset($post->image)
               <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="">
+              @endisset
               <br> <br>
 
-                <div id='publicacion-user' class="publicacion-user">
-                  <div class="botones">
-                    <a id='like-button' class='like-button' href="#"><i class="fas fa-thumbs-up"></i><span class="likes">Me gusta</span></a>
-                    <a id='dislike-button' class='dislike-button' href="#"><i class="fas fa-thumbs-down"></i><span class="likes">No me gusta</span></a>
-                    <a id='share-button' class='share-button' href="#"><i class="fas fa-share"></i><span class="likes">compartir</span></a>
-                  </div>
-                  <div id='interaccion' class="interaccion">
-                    <!-- Aca va la informacion sobre la interaccion del usuario con el posteo -->
-                    <br>
-                    <i class="compartido"><?=
-                    $numero_aleatorio = rand(1,5) . ' veces compartidos'; ?></i>
-                  </div>
-                </div>
+              @include('partials.like')
 
 
-                @include('partials.comment')
+              @include('partials.comment')
 
               <div class="form-row">
               <div class="form-group col-md-12" style="justify-content: center">

@@ -7,7 +7,7 @@
 @section('content')
 <!-- Esto es la portada  -->
   <div class="perfilLogueado">
-<section class="portadaUsuario">
+<section class="portadaUsuario" style="background-image: url('{{ Storage::url(Auth::user()->person->avatar) }}')">
 <div class="infoUsuario">
   <div class="cuadrado3">
     <img id="fotoPerfil3" src="{{ Storage::url(Auth::user()->person->avatar) }}"  alt="">
@@ -17,8 +17,8 @@
 
 
   <form class="fotoPortada" action="index" method="post" enctype="multipart/form-data">
-    <label for="avatar" class="labelAvatar">{{ __('Foto de portada') }}</label>
-    <input style='display: none;' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
+    <label  for="avatar" class="labelAvatar">{{ __('Foto de portada') }}</label>
+    <input id='avatar' style='display: none;' id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" accept="image/*" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" autofocus>
   </form>
 </section>
 
@@ -29,7 +29,7 @@
 <article class="infoGeneral">
 
     <h4>Datos Adicionales</h4>
-   @include('partials.register')
+   @include('partials.additional')
 
 </article>
 
@@ -40,11 +40,12 @@
     @if (auth()->id()==$post->user_id)
       <div class="contenedorFoto">
     <img class="imgPublicacion" src="/storage/{{$post->image}}"  alt="" >
-      </div>  
+      </div>
     @endif
      @endforeach
 
 </article>
+
 </section>
 
   <!-- Esto es para agregar posts -->
@@ -59,6 +60,6 @@
       @include('partials.perfil')
 </article>
 </section>
-</div>
+<script src="{{ asset('js/profile.js') }}" defer></script>
   </div>
 @endsection

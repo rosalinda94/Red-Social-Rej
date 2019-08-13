@@ -33,7 +33,7 @@ class Post extends Model
 
   public function getLikedAttribute() 
   {
-    return $this->like->contains(auth()->id());
+    return $this->like->contains('user_id', auth()->id());
   }
 
 }
