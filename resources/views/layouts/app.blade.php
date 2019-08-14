@@ -93,7 +93,7 @@
 
                             <li class="nav-item dropdown">
 
-                                       @include('partials.notificaciones')
+                                       <?php // include('partials.notificaciones') ?
                             </li>
 
                             <li>
